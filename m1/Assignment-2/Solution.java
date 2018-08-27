@@ -14,7 +14,7 @@ public class Solution {
 	Need to fill the areaOfTriangle function and print the output
 	of fahrenheit.
 	*/
-	public static void areaofTriangle(base, height) {
-		System.out.println(0.5 * base * height)
+	public static void areaOfTriangle(int base, int height) {
+		System.out.println(0.5 * base * height);
 	}
 }
