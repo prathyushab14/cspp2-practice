@@ -18,7 +18,7 @@ final class Solution {
 		rootsOfQuadraticEquation(a, b, c);
 	}
 	/*
-	Need to write the rootsOfQuadraticEquation function and print the output.
+	Need to write the rootsOfQuadraticEquation function.
 	*/
 	public static void rootsOfQuadraticEquation(int a, int b, int c) {
 		double r1;
