@@ -10,7 +10,6 @@ final class Solution {
     /**
     * @param args finding roots
     **/
-    
 
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
