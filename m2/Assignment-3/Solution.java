@@ -1,5 +1,5 @@
 import java.util.Scanner;
-/** power of base **/
+/** power of base.**/
 final class Solution {
     /**
     *Do not modify this main function.
@@ -8,8 +8,8 @@ final class Solution {
     /**
     * @param args finding power
     **/
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);      
+    public static void main(final String[] args) {
+        Scanner s = new Scanner(System.in);
         int base = s.nextInt();
         int exponent = s.nextInt();
         long result = power(base, exponent);
