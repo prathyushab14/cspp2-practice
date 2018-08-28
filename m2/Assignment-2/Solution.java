@@ -24,8 +24,8 @@ final class Solution {
 		double r1;
 		double r2;
 		int t = 4;
-		r1 = (-b + Math.sqrt((b * b) -(t * a * c))) / (2 * a);
-		r2 = (-b - Math.sqrt((b * b) -(t * a * c))) / (2 * a);
+		r1 = (-b + Math.sqrt((b * b) - (t * a * c))) / (2 * a);
+		r2 = (-b - Math.sqrt((b * b) - (t * a * c))) / (2 * a);
 		System.out.println(r1 + " " + r2);
 	}
 }
