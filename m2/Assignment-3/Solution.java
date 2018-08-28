@@ -20,7 +20,7 @@ final class Solution {
     **/
     /**
     * @param base baseis a variable
-    * @param height height is a variable
+    * @param exponent exponent is a variable
     **/
     public static long power(final int base, final int exponent) {
         if (exponent == 0) {
