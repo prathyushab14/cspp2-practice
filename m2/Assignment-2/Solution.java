@@ -21,7 +21,9 @@ final class Solution {
 	Need to write the rootsOfQuadraticEquation function.
 	*/
 	public static void rootsOfQuadraticEquation(int a, int b, int c) {
-		/** quadratic roots. **/
+		/*
+		quadratic roots. 
+		*/
 		double r1;
 		double r2;
 		final int t = 4;
