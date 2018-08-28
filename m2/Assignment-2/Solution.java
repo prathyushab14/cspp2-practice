@@ -1,26 +1,31 @@
 /** roots of quadratic equation. ***/
 import java.util.Scanner;
-import java.lang.Math;
+// import java.lang.Math;
 
 final class Solution {
-	/*
-	Do not modify this main function.
-	*/
+	/**
+	*Do not modify this main function.
+	**/
 	private Solution() {
 	/**
 		@param args finding roots**/
 	}
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int a = scan.nextInt();
 		int b = scan.nextInt();
 		int c = scan.nextInt();
 		rootsOfQuadraticEquation(a, b, c);
 	}
-	/*
-	Need to write the rootsOfQuadraticEquation function.
-	*/
-	public static void rootsOfQuadraticEquation(int a, int b, int c) {
+	/**
+	*Need to write the rootsOfQuadraticEquation function.
+	**/
+	/**
+	* @param a a is a variable
+	* @param b b is a variable
+	* @param c c is a variable
+	**/
+	public static void rootsOfQuadraticEquation(final int a, final int b, final int c) {
 		/*
 		quadratic roots.
 		*/
