@@ -1,10 +1,15 @@
+/** roots of quadratic equation. ***/
 import java.util.Scanner;
 import java.lang.Math;
 
-public class Solution {
+final class Solution {
 	/*
 	Do not modify this main function.
 	*/
+	private Solution() {
+	/**
+		@param args finding roots**/
+	}
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int a = scan.nextInt();
@@ -15,7 +20,7 @@ public class Solution {
 	/*
 	Need to write the rootsOfQuadraticEquation function and print the output.
 	*/
-	public static void rootsOfQuadraticEquation(int a,int b,int c){
+	public static void rootsOfQuadraticEquation(int a, int b, int c){
 		double r1;
 		double r2;
 		r1 = (- b + Math.sqrt((b * b)-(4 * a * c))) / (2 * a);
