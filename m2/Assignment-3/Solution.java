@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 /** power of base.**/
 final class Solution {
