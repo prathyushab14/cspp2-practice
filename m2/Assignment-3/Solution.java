@@ -28,8 +28,7 @@ final class Solution {
             return 1;
         } else if (exponent == 1) {
             return base;
-        }
-        else {
+        } else {
             return base * power(base, exponent - 1);
         }
     }
