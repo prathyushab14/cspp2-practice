@@ -9,8 +9,8 @@ public class Solution {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         int c = 0;
-        int ten = 10;
-        int seven = 7;
+        final int ten = 10;
+        final int seven = 7;
         for (int i = 1; i <= n; i++) {
             int j = i;
             while (j != 0) {
