@@ -27,8 +27,9 @@ final class Solution {
     * @param n2 n2 is a variable
     * @return gcd
     **/
-    public static int gcd(int n1, int n2) {
+    public static int gcd(final int n11, final int n21) {
         int r;
+        int n1 =n11, n2 =n21;
         while (n2 > 0) {
             r = n1 % n2;
             if (r == 0) {
