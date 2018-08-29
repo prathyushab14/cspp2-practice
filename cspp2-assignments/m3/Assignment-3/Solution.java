@@ -33,12 +33,10 @@ final class Solution {
             r = n1 % n2;
             if (r == 0) {
                 return n2;
-            }
-            else {
+            }else {
                 n1 = n2;
                 n2 = r;
             }
-
         }
         return n2;
     }
