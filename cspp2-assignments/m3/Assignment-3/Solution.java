@@ -33,7 +33,7 @@ final class Solution {
          * @param n1 n1
          * @param n2 n2
          */
-        int n1 =n11, n2 =n21;
+        int n1 = n11, n2 = n21;
         while (n2 > 0) {
             r = n1 % n2;
             if (r == 0) {
