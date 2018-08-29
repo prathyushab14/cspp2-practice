@@ -13,8 +13,8 @@ public class Solution {
         int seven = 7;
         for (int i = 1; i <= n; i++) {
             int j = i;
-            while( j != 0 ) {
-                if(j % ten == seven) {
+            while (j != 0) {
+                if (j % ten == seven) {
                     c = c + 1;
                 }
                 j = j / ten;
