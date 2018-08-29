@@ -13,18 +13,19 @@ final class Solution {
 
     public static void main(final String[] args) {
 
-        Scanner s=new Scanner(System.in);      
+        Scanner s = new Scanner(System.in);
         int n1 = s.nextInt();
         int n2 = s.nextInt();
-        gcd(n1,n2);
+        gcd(n1, n2);
         System.out.println(gcd(n1, n2));
     }
     /**
-	*Need to write the gcd function and print the output.
-	**/
+    *Need to write the gcd function and print the output.
+    **/
     /**
     * @param n1 n1 is a variable
     * @param n2 n2 is a variable
+    * @return gcd
     **/
     public static int gcd(int n1, int n2) {
         int r;
@@ -33,7 +34,7 @@ final class Solution {
             if (r == 0) {
                 return n2;
             }
-            else{
+            else {
                 n1 = n2;
                 n2 = r;
             }
