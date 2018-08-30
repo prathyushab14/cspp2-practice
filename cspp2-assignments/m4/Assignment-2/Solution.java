@@ -5,7 +5,7 @@ public class Solution {
         Scanner sc = new Scanner(System.in);
         int m = sc.nextInt();
         int n = sc.nextInt();
-        int[][] arr1= new int[m][n];
+        int[][] arr1 = new int[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 arr1[i][j] = sc.nextInt();
@@ -13,7 +13,7 @@ public class Solution {
         }
         int c = sc.nextInt();
         int d = sc.nextInt();
-        int [][] arr2 = new int[c][d];
+        int[][] arr2 = new int[c][d];
         for (int i = 0; i < c; i++) {
             for (int j = 0; j < arr2[i].length; j++) {
                 arr2[i][j] = sc.nextInt();
