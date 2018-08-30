@@ -3,9 +3,8 @@ import java.util.Scanner;
 *Do not modify this main function.
 **/
 final class Solution {
-/* Fill the main function to print resultant of addition of matrices.
     /**
-    *constructor
+    *constructor.
     **/
     private Solution() { }
     /**
