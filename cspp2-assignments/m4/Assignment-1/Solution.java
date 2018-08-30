@@ -15,7 +15,9 @@ public class Solution
 		for (int j = 0; j < arr1.length; j++) {
 			if (arr1[j] > max) {
 				max = arr1[j];
-			} else max = max;
+			} else { 
+				max = max;
+			}
 		} System.out.println(max);
 	}
 }
