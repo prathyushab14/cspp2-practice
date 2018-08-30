@@ -8,7 +8,7 @@ final class Solution {
     **/
     private Solution() { }
     /**
-    * @param args addition of matrices
+    * @param args addition of matrices.
     **/
     public static void main(final String[] args) {
     /** main
