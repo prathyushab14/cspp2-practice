@@ -1,12 +1,22 @@
 import java.util.*;
-public class Solution
-{/*
-    Fill this main function to print maximum of given array
-    */
-    public static void main(String[] args) {
+/**
+*Do not modify this main function.
+**/
+final class Solution {
+	/**
+    *constructor.
+    **/
+    private Solution() { }
+    /**
+    * @param args maximum element of array.
+    **/
+    public static void main(final String[] args) {
+    /** main
+    *function
+    **/
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int arr1[];
+        int arr1 [];
         int max = 0;
         arr1 = new int[n];
         for (int i = 0; i < arr1.length; i++) {
