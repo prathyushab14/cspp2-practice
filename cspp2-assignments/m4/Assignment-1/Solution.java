@@ -3,7 +3,7 @@ import java.util.*;
 *Do not modify this main function.
 **/
 final class Solution {
-	/**
+    /**
     *constructor.
     **/
     private Solution() { }
@@ -16,7 +16,7 @@ final class Solution {
     **/
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int arr1 [];
+        int arr1[];
         int max = 0;
         arr1 = new int[n];
         for (int i = 0; i < arr1.length; i++) {
