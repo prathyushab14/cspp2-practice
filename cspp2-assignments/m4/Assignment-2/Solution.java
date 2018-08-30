@@ -12,25 +12,29 @@ public class Solution {
         		arr1[i][j] = sc.nextInt();
         	}
         }
-        m = sc.nextInt();
-        n = sc.nextInt();
+        int c = sc.nextInt();
+        int d = sc.nextInt();
         for(int i=0;i<m;i++) {
          	for(int j=0;j<arr1[i].length;j++) {
                 arr2[i][j] = sc.nextInt();
             }
         }
-        for(int i=0;i<m;i++) {
-        	for(int j=0;j<arr1[i].length;j++) {
-        		arr1[i][j] = arr1[i][j] + arr2[i][j];
-          	}
-        }
-        for(int i=0;i<m;i++) {
-        	for(int j=0;j<arr1[i].length;j++){
-                System.out.print(arr1[i][j]);
-                if(j == 0 || j == 1) {
-                	System.out.print(" ");
-                }
-            }System.out.println();
+        if(m != c && n != d){
+        	System.out.println("not possible");
+        }else {
+        	for(int i=0;i<m;i++) {
+        	    for(int j=0;j<arr1[i].length;j++) {
+        		    arr1[i][j] = arr1[i][j] + arr2[i][j];
+          	    }
+            }
+            for(int i=0;i<m;i++) {
+        	    for(int j=0;j<arr1[i].length;j++){
+                    System.out.print(arr1[i][j]);
+                    if(j == 0 || j == 1) {
+                	    System.out.print(" ");
+                    }
+                }System.out.println();
+            }
         }
     }
 } 
