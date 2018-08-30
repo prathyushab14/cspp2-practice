@@ -14,8 +14,8 @@ public class Solution {
         }
         int c = sc.nextInt();
         int d = sc.nextInt();
-        for(int i=0;i<m;i++) {
-         	for(int j=0;j<arr1[i].length;j++) {
+        for(int i=0;i<c;i++) {
+         	for(int j=0;j<arr2[i].length;j++) {
                 arr2[i][j] = sc.nextInt();
             }
         }
