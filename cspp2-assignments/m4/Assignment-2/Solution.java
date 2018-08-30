@@ -1,7 +1,10 @@
 import java.util.Scanner;
-public class Solution {
+final class Solution {
     /* Fill the main function to print resultant of addition of matrices*/
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
+        /** main 
+        *function
+        **/
         Scanner sc = new Scanner(System.in);
         int m = sc.nextInt();
         int n = sc.nextInt();
