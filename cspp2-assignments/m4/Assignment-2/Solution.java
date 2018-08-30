@@ -19,7 +19,7 @@ public class Solution {
                 arr2[i][j] = sc.nextInt();
             }
         }
-        if(m != c && n != d){
+        if(m != c || n != d){
         	System.out.println("not possible");
         }else {
         	for(int i=0;i<m;i++) {
