@@ -2,7 +2,7 @@ import java.util.Scanner;
 final class Solution {
     /* Fill the main function to print resultant of addition of matrices*/
     public static void main(final String[] args) {
-        /** main 
+        /** main
         *function
         **/
         Scanner sc = new Scanner(System.in);
