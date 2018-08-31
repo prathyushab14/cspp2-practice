@@ -20,7 +20,7 @@ public class Solution
 	}
 	public static String binaryToDecimal(String s){
 		double sum=0;
-		for(int i= s.length()-1;i>=0;i--){
+		for(int i=0;i<s.length()-1;i++){
 			if(s.charAt(i)=='1'){
                 int j = s.indexOf(i);
                 sum = sum + Math.pow(2,j);
