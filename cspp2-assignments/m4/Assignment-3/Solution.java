@@ -20,11 +20,10 @@ public class Solution
 	}
 	public static String binaryToDecimal(String s){
 		double sum=0;
-		int j=s.length();
-		for(int i=0;i<s.length();i++,j--){
+		for(int i=0,j=s.length()-1;i<s.length();i++,j--){
 			int v = s.charAt(i);
 			if(v == 1){
-                sum = sum + Math.pow(2,j-1);
+                sum = sum + Math.pow(2,j);
             }
 		}return Double.toString(sum);
 	}
