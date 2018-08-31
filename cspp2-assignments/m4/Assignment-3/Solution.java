@@ -23,7 +23,7 @@ public class Solution
 		for(int i=0;i<s.length()-1;i++){
 			if(s.charAt(i)=='1'){
                 int j = s.indexOf(i);
-                sum = sum + Math.pow(2,j);
+                sum = sum + Math.pow(2,i);
             }
 		}return Double.toString(sum);
 	}
