@@ -21,7 +21,8 @@ Do not modify the main function.
     **/
     public static String reverseString(final String s) {
     /**
-    * Write reverseString function.
+    * @param s s is a string
+    * @return k
     **/
         String k = "";
         /**
