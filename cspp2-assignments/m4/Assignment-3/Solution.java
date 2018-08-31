@@ -25,16 +25,16 @@ final class Solution {
         }
     }
     /**
-     * { function_description }
+     * function_description
      *
-     * @param s { parameter_description }
+     * @param s parameter_description
      *
-     * @return sum { description_of_the_return_value }
+     * @return sum description_of_the_return_value.
      */
     public static String binaryToDecimal(final String s) {
         int sum = 0;
         /**
-         * { var_description }
+         * var_description.
          */
         int j = s.length() - 1;
         for (int i = 0; i < s.length(); i++) {
