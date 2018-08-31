@@ -21,6 +21,9 @@ Do not modify the main function.
     * Write reverseString function.
     **/
         String k = "";
+        /**
+         * @param i i is a variable.
+         */
         for (int i = s.length() - 1; i >= 0; i--) {
             k += s.charAt(i);
         } return k;
