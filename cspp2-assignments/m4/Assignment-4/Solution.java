@@ -17,7 +17,6 @@ final class Solution {
         String reverse = reverseString(s);
         System.out.println(reverse);
     }
-    //Write reverseString function
     public static String reverseString(final String s) {
     /**
     * Write reverseString function.
