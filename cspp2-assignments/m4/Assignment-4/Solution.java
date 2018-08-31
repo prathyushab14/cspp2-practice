@@ -9,17 +9,17 @@ public class Solution
 	*/
 	public static void main(String[] args)
 	{
-		Scanner sc=new Scanner(System.in);
-		String s=sc.nextLine();
-		String reverse=reverseString(s);	
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String reverse = reverseString(s);	
 		System.out.println(reverse);
 		
 	}
 	//Write reverseString function
-    public static String reverseString(String s){
+    public static String reverseString(String s) {
     	String k = "";
-    	for(int i=s.length()-1;i>=0;i--){
+    	for(int i = s.length() - 1; i >= 0; i--) {
             k += s.charAt(i);
-    	}return k;
+    	} return k;
     }
 }
