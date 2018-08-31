@@ -25,7 +25,7 @@ final class Solution {
         }
     }
     /**
-     * function_description
+     * function_description.
      *
      * @param s parameter_description
      *
