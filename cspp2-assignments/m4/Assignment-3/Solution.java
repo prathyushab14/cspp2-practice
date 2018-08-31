@@ -1,10 +1,6 @@
-import java.util.Scanner;
+import java.util.*;
 /**
 * { item_description }
-**/
-import java.lang.Math;
-/**
-* Class for solution.
 **/
 final class Solution {
 /**
