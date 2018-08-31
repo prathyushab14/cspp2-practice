@@ -16,6 +16,9 @@ Do not modify the main function.
         String reverse = reverseString(s);
         System.out.println(reverse);
     }
+    /**
+    * Write reverseString function.
+    **/
     public static String reverseString(final String s) {
     /**
     * Write reverseString function.
