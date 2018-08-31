@@ -1,7 +1,7 @@
 /**This is program.*/
 import java.util.*;
 /**
-* { item_description }
+* { item_description }.
 **/
 final class Solution {
 /**
