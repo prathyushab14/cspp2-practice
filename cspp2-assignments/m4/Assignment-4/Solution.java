@@ -1,6 +1,6 @@
 import java.util.Scanner;
 /**
- * { item_description }
+ * { item_description.
  */
 final class Solution {
     /*
@@ -9,7 +9,7 @@ final class Solution {
     private Solution() { }
     /**
     * main function.
-    * @param args  The arguments
+    * @param args  The arguments.
     **/
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -21,7 +21,7 @@ final class Solution {
     public static String reverseString(final String s) {
     /**
     * Write reverseString function.
-    * */
+    **/
         String k = "";
         for (int i = s.length() - 1; i >= 0; i--) {
             k += s.charAt(i);
