@@ -19,11 +19,11 @@ Do not modify the main function.
     /**
     * Write reverseString function.
     **/
-    public static String reverseString(final String s) {
     /**
     * @param s s is a string
     * @return k
     **/
+    public static String reverseString(final String s) {
         String k = "";
         /**
          * @param i i is a variable.
