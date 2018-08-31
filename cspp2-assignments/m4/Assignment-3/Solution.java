@@ -6,7 +6,7 @@ import java.lang.Math;
 /**
 * Class for solution.
 **/
-public class Solution {
+final class Solution {
 /**
 *Do not modify this main function.
 **/
@@ -14,12 +14,11 @@ public class Solution {
     /**
     * @param args  The arguments.
     **/
-    public static void main(String[] args)
-    {
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         sc.nextLine();
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             String s = sc.nextLine();
             String res = binaryToDecimal(s);
             System.out.println(res);
