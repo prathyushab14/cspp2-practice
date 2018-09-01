@@ -3,7 +3,7 @@ import java.util.Scanner;
  * Write a java program to find the odd composite numbers
  * between 2 and n where n is given as an input.
  *
- * @author : 
+ * @author :
  */
 public final class Solution {
     /**
@@ -18,7 +18,7 @@ public final class Solution {
      * @param      n     n value
      */
     static void oddComposites(final int n) {
-	// write your code here
+    // write your code here
         int i;
         int c = 0;
         for (i = 3; i < n; i++) {
@@ -29,7 +29,7 @@ public final class Solution {
                         if (c >= 1) {
                            System.out.println(i);
                            break;
-                        } 
+                        }
                     }
                 }
             }
@@ -45,4 +45,3 @@ public final class Solution {
         oddComposites(n);
     }
 }
-
