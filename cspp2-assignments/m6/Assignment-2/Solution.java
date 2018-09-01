@@ -27,6 +27,10 @@ final class Solution {
 	// write ypur code here
         for(int i=0;i<rows;i++){
             for(int j=0;j<columns;j++){
+                if(a[i][j]<100){
+                    int s = (int) Math.ceil(a[i][j] / 100);
+                    a[i][j] = s*100; 
+                }
                 int r = (int) Math.ceil(a[i][j] / 100.0);
                     a[i][j] = r * 100;
             }
