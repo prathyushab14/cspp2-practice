@@ -21,7 +21,8 @@ public final class Solution {
     // write your code here
         int i;
         int c = 0;
-        for (i = 3; i < n; i++) {
+        int three = 3;
+        for (i = three; i < n; i++) {
             if (i % 2 != 0) {
                 for (int j = 2; j <= i / 2; j++) {
                     if (i % j == 0) {
