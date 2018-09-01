@@ -24,15 +24,14 @@ final class Solution {
      */
     static int[][] roundHundred(final int[][] a, final int rows, final int columns) {
 
-	// write ypur code here
-        for(int i=0;i<rows;i++){
-            for(int j=0;j<columns;j++){
+    // write ypur code here
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
                 float r = a[i][j] / 100f;
                 int s = (int) Math.round(r);
                     a[i][j] = s * 100;
                 }
-        }return a;
-	
+        } return a;
     }
     /**
      * Main function.
