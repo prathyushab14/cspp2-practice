@@ -30,9 +30,10 @@ final class Solution {
                 if(a[i][j]<100){
                     int s = (int) Math.ceil(a[i][j] / 100);
                     a[i][j] = s*100; 
-                }
+                }else {
                 int r = (int) Math.ceil(a[i][j] / 100.0);
                     a[i][j] = r * 100;
+                }
             }
         }return a;
 	
