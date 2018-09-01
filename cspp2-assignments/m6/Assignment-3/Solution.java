@@ -28,7 +28,7 @@ final class Solution {
 	// write your code here
     	for(int i=0;i<charArray.length;i++){
     		if(charArray[i] == oldChar){
-    			charArray[oldChar] = newChar;
+    			charArray[i] = newChar;
     		}
     	}return charArray;
     }
