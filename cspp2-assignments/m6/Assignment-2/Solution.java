@@ -27,11 +27,8 @@ final class Solution {
 	// write ypur code here
         for(int i=0;i<rows;i++){
             for(int j=0;j<columns;j++){
-                if((a[i][j]/10) < 5) {
-                    a[i][j] = 0;
-                }else{
-                    a[i][j] = 100;
-                }
+                int r = (a[i][j] / 100);
+               a[i][j] = r * 100;
             }
         }return a;
 	
