@@ -25,11 +25,12 @@ final class Solution {
     static int[][] rH(final int[][] a, final int rows, final int columns) {
     // write ypur code here
         final float hun = 100f;
+        final int hund = 100;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 float r = a[i][j] / hun;
                 int s = (int) Math.round(r);
-                    a[i][j] = s * 100;
+                    a[i][j] = s * hund;
                 }
         } return a;
     }
