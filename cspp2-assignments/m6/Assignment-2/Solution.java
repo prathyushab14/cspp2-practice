@@ -28,7 +28,7 @@ final class Solution {
         for(int i=0;i<rows;i++){
             for(int j=0;j<columns;j++){
                 int r = (a[i][j] / 100);
-               a[i][j] = r * 100;
+                    a[i][j] = r * 100;
             }
         }return a;
 	
