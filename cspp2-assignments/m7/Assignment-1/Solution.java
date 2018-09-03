@@ -1,4 +1,7 @@
 import java.util.Scanner;
+/**
+ * input validator class.
+ */
 final class InputValidator {
     /** declaring variables in class.
     *
