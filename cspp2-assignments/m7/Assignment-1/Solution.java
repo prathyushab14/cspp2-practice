@@ -1,15 +1,15 @@
-import java.util.*;
-class InputValidator {
+import java.util.Scanner;
+final class InputValidator {
     /** declaring variables in class.
     *
     **/
-    String a;
+    private String a;
     /**
-     * 
+     *
      *
      * @param      input  The input
      */
-    InputValidator(String input) {
+    InputValidator(final String input) {
         a = input;
     }
     /**
