@@ -1,6 +1,5 @@
 import java.util.*;
-class InputValidator
-{
+class InputValidator {
 	String a;
 	InputValidator(String input) {
 		a = input;
@@ -12,18 +11,13 @@ class InputValidator
 		} else {
 			return false;
 		}
-
 	}
 }
-final class Solution
-{
-	public static void main(String args[])
-    {
-    	Scanner s=new Scanner(System.in);
-    	String input=s.next();
-    	InputValidator i=new InputValidator(input);    	
+final class Solution {
+	public static void main(final String args[]) {
+    	Scanner s = new Scanner(System.in);
+    	String input = s.next();
+    	InputValidator i = new InputValidator(input);    	
     	System.out.println(i.validateData());
-
     }
-
 }
