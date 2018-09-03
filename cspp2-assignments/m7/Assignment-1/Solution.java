@@ -36,11 +36,10 @@ final class InputValidator {
  * class solution.
  */
 final class Solution {
-    Solution() {
+    Solution() { }
     /**do not modify this main function.
     *
     **/
-    }
     /**
      * main function.
      *
