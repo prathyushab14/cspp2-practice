@@ -34,6 +34,11 @@ class InputValidator {
  * class solution.
  */
 final class Solution {
+    /**
+     * main function.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         String input = s.next();
