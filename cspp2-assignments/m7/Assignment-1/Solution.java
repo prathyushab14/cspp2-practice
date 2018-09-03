@@ -36,14 +36,12 @@ final class InputValidator {
  * class solution.
  */
 final class Solution {
-    Solution() { }
-    /**do not modify this main function.
-    *
-    **/
     /**
-     * main function.
-     *
-     * @param      args  The arguments
+     * Constructs the object.
+     */
+    private Solution() { }
+    /**
+     * @param args The arguments
      */
     public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
