@@ -9,6 +9,9 @@ public class List {
     **/
     private int[] list;
     private int size;
+    /**
+     * @param size size of list.
+     */
     /*
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
