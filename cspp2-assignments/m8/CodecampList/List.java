@@ -180,7 +180,7 @@ public class List {
     public String toString() {
         // Replace the code below
         String res = "[";
-        for (int i = 0;i < size; i++) {
+        for (int i = 0;i < size - 1; i++) {
             res = res + list[i] + ",";
         }
         res += list[size - 1] + "]";
