@@ -2,7 +2,7 @@ import java.io.BufferedInputStream;
 import java.util.Scanner;
 
 public class List {
-	//Implement all the methods mentioned to build a ListADT
+    //Implement all the methods mentioned to build a ListADT
     private int[] list;
     private int size;
 
@@ -129,7 +129,7 @@ public class List {
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        if (index >=0 && index < size) {
+        if (index >= 0 && index < size) {
             for (int i = index; i < size; i++) {
                 list[i] = list[i+1];
             }
@@ -182,7 +182,7 @@ public class List {
     public String toString() {
         // Replace the code below
         String res = "[";
-        for (int i = 0;i < size - 1; i++) {
+        for (int i = 0; i < size - 1; i++) {
             res = res + list[i] + ",";
         }
         res += list[size - 1] + "]";
@@ -219,7 +219,7 @@ public class List {
         return -1;
     }
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -263,5 +263,5 @@ public class List {
                 break;
             }
         }
-	}
+    }
 }
