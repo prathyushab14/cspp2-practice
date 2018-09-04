@@ -129,7 +129,7 @@ public class List {
         return -1;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      args  The arguments
      */
