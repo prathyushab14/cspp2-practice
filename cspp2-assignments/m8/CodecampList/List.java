@@ -19,7 +19,8 @@ public class List {
      * Constructs the object.
      */
         public List() {
-        list = new int[10];
+        final int ten = 10;
+        list = new int[ten];
         size = 0;
         // what are the two variables to be initialized here?
         // think about the private variables described above.
