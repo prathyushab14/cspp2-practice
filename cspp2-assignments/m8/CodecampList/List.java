@@ -8,11 +8,11 @@ public class List {
      * Implement all the methods mentioned to build a ListADT.
     **/
     /**
-     * { var_description }.
+     * { int array list }.
      */
     private int[] list;
     /**
-     * { var_description }.
+     * { size of the list }.
      */
     private int size;
     /**
@@ -33,7 +33,7 @@ public class List {
         // That is the initial value to use for size.
     }
     /**
-     * { function_description }.
+     * { adding the item to list }.
      *
      * @param      item  The item
      */
@@ -43,16 +43,16 @@ public class List {
         size++;
     }
     /**
-     * { function_description }.
+     * { to find size of the list }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns size }
      */
     public int size() {
         // replace the code below to implement the size method
         return size;
     }
     /**
-     * { function_description }.
+     * { remove the item from the list }.
      *
      * @param      index  The index
      */
@@ -70,11 +70,11 @@ public class List {
         }
     }
     /**
-     * { function_description }.
+     * { to get the item from the list }.
      *
      * @param      index  The index
      *
-     * @return     { description_of_the_return_value }
+     * @return     { item at the particular index }
      */
     public int get(final int index) {
         // Replace the code below to write the code for get
@@ -98,11 +98,11 @@ public class List {
         return res;
     }
     /**
-     * { function_description }.
+     * { to check if the item is in the list }.
      *
      * @param      item  The item
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns boolean value }
      */
     public boolean contains(final int item) {
         // Replace the code below
@@ -116,7 +116,7 @@ public class List {
      *
      * @param      item  The item
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns index value }
      */
     public int indexOf(final int item) {
         // Replace the code below
@@ -130,7 +130,7 @@ public class List {
         return -1;
     }
     /**
-     * { function_description }.
+     * main function.
      *
      * @param      args  The arguments
      */
@@ -182,6 +182,3 @@ public class List {
         }
     }
 }
-
-
-
