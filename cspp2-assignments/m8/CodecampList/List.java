@@ -27,11 +27,9 @@ public class List {
      * This is a hard concept to understand. Discuss with your mentor.
      *
     */
-    
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
-
     /*
      * What are the other class variables needed for creating a list?
      * How about keeping track of the size of the list?
@@ -51,11 +49,9 @@ public class List {
      * to be accessed by the methods that are outside of the List class.
      * 
      */
-
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
-
     /*
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
@@ -63,20 +59,16 @@ public class List {
     public List() {
         list = new int[10];
         size = 0;
-
         // what are the two variables to be initialized here?
         // think about the private variables described above.
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-
     }
-    
     /*
      * The add method does what the name suggests.
      * Add an int item to the list.
@@ -93,7 +85,6 @@ public class List {
         list[size] = item;
         size++;
     }
-
     /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
@@ -105,7 +96,6 @@ public class List {
         // replace the code below to implement the size method
         return size;
     }
-
     /*
      * The remove method does what the name suggests.
      * Removes an int item, specified by the index argument, from the list
@@ -139,7 +129,6 @@ public class List {
             System.out.println("Invalid Position Exception");
         }
     }
-
     /*
      * Get method has to return the items that is
      * at the index position passed as an argument to the method.
@@ -153,12 +142,11 @@ public class List {
      */
     public int get(int index) {
         // Replace the code below to write the code for get
-        if ( index >= 0 && index < size) {
+        if (index >= 0 && index < size) {
             return list[index];
         }
         return -1;
     }
-
     /*
      * What happens when you print an object using println?
      * Java provides a method named toString that is internally
@@ -188,7 +176,6 @@ public class List {
         res += list[size - 1] + "]";
         return res;
     } 
-    
     /*
      * Contains return true if the list has
      * the item passed as an argument to the method
@@ -201,7 +188,6 @@ public class List {
             return true;
         return false;
     }
-
     /*
      * Returns the index of the first occurrence 
      * of the specified element in this list,
@@ -218,11 +204,9 @@ public class List {
         }
         return -1;
     }
-
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
-
         // code to read the test cases input file
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         // check if there is one more line to process
@@ -255,8 +239,9 @@ public class List {
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
                 case "get":
-                if ((l.get(Integer.parseInt(tokens[1]))) != -1)
+                if ((l.get(Integer.parseInt(tokens[1]))) != -1) {
                     System.out.println(l.get(Integer.parseInt(tokens[1])));
+                }
                 break;
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
