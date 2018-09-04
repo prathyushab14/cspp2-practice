@@ -36,7 +36,7 @@ public class List {
      *
      * @param      item  The item
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         list[size] = item;
         size++;
