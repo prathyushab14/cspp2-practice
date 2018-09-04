@@ -7,7 +7,13 @@ public class List {
     /**
      * Implement all the methods mentioned to build a ListADT.
     **/
+    /**
+     * { var_description }
+     */
     private int[] list;
+    /**
+     * { var_description }
+     */
     private int size;
     /**
      * @param size size of list.
