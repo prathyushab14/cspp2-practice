@@ -8,11 +8,11 @@ public class List {
      * Implement all the methods mentioned to build a ListADT.
     **/
     /**
-     * { var_description }
+     * { var_description }.
      */
     private int[] list;
     /**
-     * { var_description }
+     * { var_description }.
      */
     private int size;
     /**
@@ -82,7 +82,7 @@ public class List {
         // That is the initial value to use for size.
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      item  The item
      */
@@ -92,7 +92,7 @@ public class List {
         size++;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -101,7 +101,7 @@ public class List {
         return size;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      index  The index
      */
