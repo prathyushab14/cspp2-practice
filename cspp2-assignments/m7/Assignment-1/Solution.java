@@ -6,14 +6,14 @@ final class InputValidator {
     /** declaring variables in class.
     *
     **/
-    private String Input;
+    private String INPUT;
     /**
      *
      *
      * @param      input  The input
     **/
     InputValidator(final String input) {
-        Input = input;
+        INPUT = input;
     }
     /**
      * validates the string length.
@@ -25,7 +25,7 @@ final class InputValidator {
         /**
          * @param length length of the string
          */
-        int length = Input.length();
+        int length = INPUT.length();
         if (length >= six) {
             return true;
         }
