@@ -16,9 +16,17 @@ import java.util.Scanner;
  *
  */
 final class Fibonacci {
+    /**
+     * n1,n2,sum are variables.
+    **/
     private int n1;
     private int n2;
     private int sum;
+    /**
+     * @param n1 n1 is first element of fibonacci
+     * @param n2 n2 is the second element of fibonacci
+     * @param sum sum 
+     */
     /*
      * fib is a static method takes a argument n
      * n is the count of the fibonacci numbers to be generated.
@@ -28,9 +36,21 @@ final class Fibonacci {
      */
     private Fibonacci() {
     }
+    /**
+     * 
+     *
+     * @param n no of fiboncci numbers
+     *
+     * @return list 
+     */
     public static List fib(final int n) {
         // todo - complete this method
         List l = new List(n);
+        /**
+         * @param n1 n1
+         * @param n2 n2
+         * @param sum sum
+         */
         int n1 = 0;
         int n2 = 1;
         int sum = 0;
