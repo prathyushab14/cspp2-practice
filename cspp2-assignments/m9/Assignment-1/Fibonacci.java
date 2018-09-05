@@ -37,7 +37,7 @@ final class Fibonacci {
         int s = n;
         l.add(n1);
         l.add(n2);
-        while (n - 2 > 0) {
+        while (s - 2 > 0) {
             sum = n1 + n2;
             l.add(sum);
             n1 = n2;
