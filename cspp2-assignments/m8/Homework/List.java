@@ -135,7 +135,7 @@ public class List {
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
      * to the objects outside the list
-     * 
+     *
      * The method returns an int. Empty list should return 0.
      */
     public int size() {
@@ -233,14 +233,15 @@ public class List {
         return indexOf(item) == -1;
     }
     /*
-     * Returns the index of the first occurrence 
+     * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
-            if (item == list[i])
+            if (item == list[i]) {
                 return i;
+            }
         }
         return -1;
     }
@@ -254,7 +255,7 @@ public class List {
         }
     }
     /*
-    Inserts the specified element at the specified index 
+    Inserts the specified element at the specified index
     by moving all the elements to the right.
         The method returns void (nothing)
      */
