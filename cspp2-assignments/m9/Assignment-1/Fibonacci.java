@@ -37,6 +37,9 @@ final class Fibonacci {
      *
      * Look for the hint.txt if some of the testcases fail.
      */
+    /**
+     * default constructor.
+    **/
     private Fibonacci() {
     }
     /**
@@ -69,6 +72,11 @@ final class Fibonacci {
         }
         return l;
     }
+    /**
+     * main function.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
