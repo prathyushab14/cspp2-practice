@@ -20,10 +20,16 @@ import java.util.Scanner;
  */
 final class Fibonacci {
     /**
-     * n1,n2,sum are variables.
+     * n1 variable
     **/
     private int n1;
+    /**
+     * n2 variable
+    **/
     private int n2;
+    /**
+     * sum
+     */
     private int sum;
     /**
      * @param n1 n1 is first element of fibonacci
