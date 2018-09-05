@@ -25,7 +25,7 @@ final class Fibonacci {
     /**
      * @param n1 n1 is first element of fibonacci
      * @param n2 n2 is the second element of fibonacci
-     * @param sum sum 
+     * @param sum sum
      */
     /*
      * fib is a static method takes a argument n
@@ -37,11 +37,11 @@ final class Fibonacci {
     private Fibonacci() {
     }
     /**
-     * 
+     *
      *
      * @param n no of fiboncci numbers
      *
-     * @return list 
+     * @return list
      */
     public static List fib(final int n) {
         // todo - complete this method
