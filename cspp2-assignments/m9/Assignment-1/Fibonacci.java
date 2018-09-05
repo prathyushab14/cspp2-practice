@@ -20,15 +20,15 @@ import java.util.Scanner;
  */
 final class Fibonacci {
     /**
-     * n1 variable
+     * n1 variable.
     **/
     private int n1;
     /**
-     * n2 variable
+     * n2 variable.
     **/
     private int n2;
     /**
-     * sum
+     * sum.
      */
     private int sum;
     /**
