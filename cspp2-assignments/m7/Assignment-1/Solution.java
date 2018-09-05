@@ -10,7 +10,7 @@ final class InputValidator {
     /**
      *
      *
-     * @param      input  The input
+     * @param      nput  The input
     **/
     InputValidator(final String nput) {
         input = nput;
