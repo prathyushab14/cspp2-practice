@@ -15,6 +15,9 @@ import java.util.Scanner;
  * by invoking the add method provided in the List ADT.
  *
  */
+/**
+ * fibonacci class.
+ */
 final class Fibonacci {
     /**
      * n1,n2,sum are variables.
