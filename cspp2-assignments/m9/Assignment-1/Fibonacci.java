@@ -28,12 +28,13 @@ final class Fibonacci {
      */
     private Fibonacci() {
     }
-    public static List fib(int n) {
+    public static List fib(final int n) {
         // todo - complete this method
         List l = new List(n);
         int n1 = 0;
         int n2 = 1;
         int sum = 0;
+        int s = n;
         l.add(n1);
         l.add(n2);
         while (n - 2 > 0) {
@@ -41,11 +42,11 @@ final class Fibonacci {
             l.add(sum);
             n1 = n2;
             n2 = sum;
-            n--; 
+            s--; 
         } 
         return l;
     }
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         System.out.println(fib(n));
