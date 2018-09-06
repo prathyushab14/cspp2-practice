@@ -70,6 +70,8 @@ public class Solution {
                         case "contains":
                         System.out.println(listString.contains(tokens[1]));
                         break;
+                        default:
+                        break;
                     }
                 }
             break;
@@ -119,6 +121,8 @@ public class Solution {
                         break;
                         case "contains":
                         System.out.println(listInteger.contains(Integer.parseInt((tokens[1]))));
+                        break;
+                        default:
                         break;
                     }
                 }
@@ -170,6 +174,8 @@ public class Solution {
                         case "contains":
                         System.out.println(listFloat.contains(Float.parseFloat(tokens[1])));
                         break;
+                        default:
+                        break;
                     }
                 }
             break;
@@ -219,6 +225,8 @@ public class Solution {
                         break;
                         case "contains":
                         System.out.println(listCharacter.contains(tokens[1].charAt(0)));
+                        break;
+                        default:
                         break;
                     }
                 }
@@ -270,6 +278,8 @@ public class Solution {
                         case "contains":
                         System.out.println(listDouble.contains(Double.parseDouble(tokens[1])));
                         break;
+                        default:
+                        break;
                     }
                 }
             break;
@@ -289,7 +299,7 @@ public class Solution {
                         if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Student[] temp = new Student[t1.length];
-                        for (int i = 0; i < t1.length ;i++ ) {
+                        for (int i = 0; i < t1.length ; i++ ) {
                             temp[i] = new Student(t1[i]);
                         }
                         listStudent.addAll(temp);
@@ -319,6 +329,8 @@ public class Solution {
                         break;
                         case "contains":
                         System.out.println(listStudent.contains(new Student(tokens[1])));
+                        break;
+                        default:
                         break;
                     }
                 }
