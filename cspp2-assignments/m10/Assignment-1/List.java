@@ -144,7 +144,7 @@ public class List {
         return size;
     }
     private void resize() {
-        list = Arrays.copyOf(list, 2* size);
+        list = Arrays.copyOf(list, 2 * size);
     }
     /*
      * The remove method does what the name suggests.
