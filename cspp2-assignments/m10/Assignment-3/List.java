@@ -2,16 +2,14 @@ import java.io.BufferedInputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Scanner;
-
-/*
+    /*
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
      * An array would be good. Right?
      * So, when we do not what we are going to have in the list
      * We need to create a Generic list to store the items
-
-     * Here E is a type parameter, and it will be replaced with 
-        actual type when the object got created. 
+     * Here E is a type parameter, and it will be replaced with
+     * actual type when the object got created. 
      */
 public class List<E> {
     private E[] list;
@@ -39,20 +37,20 @@ public class List<E> {
         //Inserts the specified element at the end of the list.
         //You can modify the code in this method.
         if (size == list.length) {
-        	resize();
+            resize();
         }
         list[(size++)] = item;
     }
-    /*Inserts all the elements of specified int 
+    /*Inserts all the elements of specified int
     array to the end of list*/
     public void addAll(E[] items) {
         //Write logic for addAll method
         for (int i = 0; i < items.length; i++) {
-        	list[size] = items[i];
-        	size++;
-        	if (size == list.length) {
-        		resize();
-        	}
+            list[size] = items[i];
+            size++;
+            if (size == list.length) {
+                resize();
+            }
         }
     }
     /*
@@ -66,7 +64,7 @@ public class List<E> {
         return size;
     }
     private void resize() {
-    	list = Arrays.copyOf(list, 2 * size);
+        list = Arrays.copyOf(list, 2 * size);
     }
     /*
      * The remove method does what the name suggests.
@@ -157,13 +155,13 @@ public class List<E> {
      * the item exists and otherwise false
      */
     public boolean contains(E item) {
-		//Write logic for contains method
-		for (int i = 0; i < size; i++) {
-			if (list[i].equals(item)) {
-				return true;
-			}
-		}
-		return false;
+        //Write logic for contains method
+        for (int i = 0; i < size; i++) {
+            if (list[i].equals(item)) {
+                return true;
+            }
+        }
+        return false;
     }
     /*
      * Returns the index of the first occurrence 
