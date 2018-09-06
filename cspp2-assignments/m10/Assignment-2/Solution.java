@@ -1,8 +1,19 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
+/**
+ * class solution.
+**/
 final class Solution {
+    /**
+     * Constructs the object.
+    **/
     private Solution() {
     }
+    /**
+     * main function.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         StringList sl = new StringList();
