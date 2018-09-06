@@ -32,7 +32,7 @@ public class List {
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
-    
+
     /**
      * list array.
      */
@@ -59,7 +59,7 @@ public class List {
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
-    
+
     /**
      * size of list.
      */
@@ -100,7 +100,7 @@ public class List {
      * constructor.
      *
      */
-    
+
     /**
      * Constructs the object.
      *
@@ -121,7 +121,7 @@ public class List {
      *
      * The method returns void (nothing)
      */
-    
+
     /**
      * add element to list.
      *
@@ -236,7 +236,7 @@ public class List {
      */
 
     /**
-     * get the element
+     * get the element.
      *
      * @param      index  The index
      *
@@ -349,7 +349,7 @@ public class List {
     by moving all the elements to the right.
         The method returns void (nothing)
      */
-    
+
     /**
      * add element at specified index.
      *
@@ -374,7 +374,7 @@ public class List {
         }
     }
     /* Returns the count of occurances of a given item in the list*/
-    
+
     /**
      * frequency of element.
      *
