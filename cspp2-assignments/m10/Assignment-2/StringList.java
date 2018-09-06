@@ -136,9 +136,6 @@ public class StringList implements StringListInterface{
      */
     public void add(String item) {
         //Inserts the specified element at the end of the list.
-        if (size == list.length) {
-            resize();
-        }
         list[size++] = item;
        
     }
@@ -149,12 +146,12 @@ public class StringList implements StringListInterface{
     }
    
     public void addAll(String[] items) {
-        if (size == list.length) {
-            resize();
-        }
         for (int i = 0; i < items.length; i++) {
             list[size] = items[i];
             size++;
+            if (size == list.length) {
+            resize();
+        }
         }
     }
     /*
