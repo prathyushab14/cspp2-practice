@@ -1,5 +1,6 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
+import java.util.Arrays;
 public class List {
     //Implement all the methods mentioned to build a ListADT
     /*
@@ -60,8 +61,8 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        final int fif = 15;
-        list = new int[fif];
+        final int ten = 10;
+        list = new int[ten];
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
@@ -141,6 +142,9 @@ public class List {
      */
     public int size() {
         return size;
+    }
+    private void resize() {
+        list = Arrays.copyOf(list, 2* size);
     }
     /*
      * The remove method does what the name suggests.
@@ -253,6 +257,9 @@ public class List {
         for (int i = 0; i < items.length; i++) {
             list[size] = items[i];
             size++;
+            if (size == list.length) {
+                resize();
+            }
         }
     }
     /*
