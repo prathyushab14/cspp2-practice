@@ -3,10 +3,10 @@ import java.util.Scanner;
 //A Class is implemented for Student details
 class Student {
     private String name;
-    public Student(final String name) {//A constructor used to initialize the instance variables
+    public Student(final String name) { //A constructor used to initialize the instance variables
         this.name = name;
     }
-    public String getName() {//Getter method which returns the value of instance variable
+    public String getName() { //Getter method which returns the value of instance variable
         return this.name;
     }
     @Override
@@ -26,7 +26,7 @@ public class Solution {
         // create an object of the list to invoke methods on it
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         String objectType = stdin.nextLine();
-        switch(objectType) {
+        switch (objectType) {
             case "S"://This case will be executed for String type list
                 List<String> listString = new List();
                 while (stdin.hasNext()) {
@@ -40,7 +40,7 @@ public class Solution {
                             listString.add(tokens[1]);
                         break;
                         case "addAll":
-                        if(tokens.length == 2){
+                        if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         listString.addAll(t1);
                         }
@@ -247,7 +247,7 @@ public class Solution {
                         if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Double[] temp = new Double[t1.length];
-                        for (int i = 0; i < t1.length ;i++ ) {
+                        for (int i = 0; i < t1.length;i++ ) {
                             temp[i] = Double.parseDouble(t1[i]);
                         }
                         listDouble.addAll(temp);
@@ -299,7 +299,7 @@ public class Solution {
                         if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Student[] temp = new Student[t1.length];
-                        for (int i = 0; i < t1.length ; i++ ) {
+                        for (int i = 0; i < t1.length; i++ ) {
                             temp[i] = new Student(t1[i]);
                         }
                         listStudent.addAll(temp);
