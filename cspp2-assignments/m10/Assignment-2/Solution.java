@@ -2,7 +2,6 @@ import java.io.BufferedInputStream;
 import java.util.Scanner;
 final class Solution {
     private Solution() {
-        
     }
     public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
