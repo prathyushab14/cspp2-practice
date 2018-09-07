@@ -264,7 +264,7 @@ public class List {
         return -1;
     }
     /*
-    Inserts all the elements of specified int array to the end of list  
+    Inserts all the elements of specified int array to the end of list
     */
 
     /**
@@ -284,7 +284,7 @@ public class List {
 
     }
     /*
-     Removes all of its elements that are contained in the specified int 
+     Removes all of its elements that are contained in the specified int
      array.
     */
    /**
@@ -446,7 +446,7 @@ public class List {
                 case "subList":
                     if (tokens.length != 2) {
                         break;
-                    } 
+                    }
                     String[] arrstring3 = tokens[1].split(",");
                     List object = l.subList(Integer.parseInt(arrstring3[0]),
                         Integer.parseInt(arrstring3[1]));
