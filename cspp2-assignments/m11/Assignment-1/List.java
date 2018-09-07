@@ -243,7 +243,7 @@ public class List {
     public List subList(int start, int end) 
     {
     // write the logic for subList
-    	if ((start < 0 || start > size) || (end < 0 || end>size)) {
+    	if (start <= -1 || end <= -1 || start > end) {
     		System.out.println("Index Out of Bounds Exception");
             return null;
         }
