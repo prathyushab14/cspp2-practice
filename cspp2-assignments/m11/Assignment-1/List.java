@@ -264,7 +264,7 @@ public class List {
     }
     int i = 0;
     int c = 0;
-    while (i < size) 
+    while (i <= size) 
     {
     	if (this.list[i] == list.list[i]) {
     		c++;
