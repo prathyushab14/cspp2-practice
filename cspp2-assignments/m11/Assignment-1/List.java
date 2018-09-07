@@ -259,16 +259,18 @@ public class List {
     public boolean equals(List list) 
     {
     // Replace the code below
-    int i = 0;
     int c = 0;
-    while (i < size) 
-    {
-    	if (this.list[i] == list.list[i]) {
-    		c++;
-    	}
-    	i++;
+    if (this.size != list.size) {
+    	return false;
     }
-    if (c == size) {
+    for (int i = 0; i < this.size; i++) {
+    	for (int j = 0; j < list.size; j++) {
+    		if (this.list[i] == list.list[j]) {
+    			c++;
+    		}
+    	}
+    }
+    if (c == list.size) {
     	return true;
     }
     return false;
