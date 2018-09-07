@@ -338,17 +338,17 @@ public class List {
     /**
      * compares the lists.
      *
-     * @param      list  The list
+     * @param      0list  The list
      *
      * @return    true or false
      */
-    public boolean equals(final List list) {
+    public boolean equals(final List olist) {
     // Replace the code below
-    if (size != list.size) {
+    if (size != olist.size) {
         return false;
     }
     for (int i = 0; i < size; i++) {
-            if (this.list[i] != list.list[i]) {
+            if (this.list[i] != olist.list[i]) {
                 return false;
             }
         }
