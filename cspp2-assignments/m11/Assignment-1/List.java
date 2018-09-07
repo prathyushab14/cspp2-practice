@@ -179,7 +179,7 @@ public class List {
         for (i = 0; i < size - 1; i++) {
             str = str + list[i] + ",";
         }
-        str = str + list[i] + "]";
+        str = str + list[size-1] + "]";
         return str;
     }
     /*
