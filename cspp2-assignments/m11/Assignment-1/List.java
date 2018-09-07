@@ -243,7 +243,7 @@ public class List {
     public List subList(int start, int end) 
     {
     // write the logic for subList
-    	if (!(start < 0 && start > end && end < 0)) {
+    	if (!(start < 0 && start > end && end < 0 && ((end-start)>size))) {
     		List ls = new List(end - start);
     	for (int i = start; i < end; i++) {
     			ls.add(list[i]);
