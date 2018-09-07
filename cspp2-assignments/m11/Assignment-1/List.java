@@ -262,12 +262,19 @@ public class List {
     if (this.size != list.size) {
     	return false;
     }
-    for (int i = 0; i < size; i++) {
+    int i = 0;
+    int c = 0;
+    while (i < size) 
+    {
     	if (this.list[i] == list.list[i]) {
-    		return true;
+    		c++;
     	}
+    	i++;
     }
-   return false;
+    if (c == size) {
+    	return true;
+    }
+    return false;
     }
     /*
     * Removes all the elements from list
