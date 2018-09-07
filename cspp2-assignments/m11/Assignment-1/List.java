@@ -259,21 +259,15 @@ public class List {
     public boolean equals(List list) 
     {
     // Replace the code below
-    int c = 0;
-    if (this.size != list.size) {
+    if (size != list.size) {
     	return false;
     }
-    for (int i = 0; i < this.size; i++) {
-    	for (int j = 0; j < list.size; j++) {
-    		if (this.list[i] == list.list[j]) {
-    			c++;
+    for (int i = 0; i < size; i++) {
+    		if (this.list[i] != list.list[i]) {
+    			return false;
     		}
     	}
-    }
-    if (c == list.size) {
     	return true;
-    }
-    return false;
     }
     /*
     * Removes all the elements from list
