@@ -256,18 +256,19 @@ public class List {
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
     */
-    // public boolean equals(List list1) 
-    // {
-    // // Replace the code below
-    // 	for(int i = 0; i < list1.length; i++) {
-    // 		for (int j = 0; j < list.length; j++) {
-    // 			if (list1[i] == list[j]) {
-    // 				return true;
-    // 			}
-    // 		}
-    //     }
-    //     return false;
-    // }
+    public boolean equals(List list) 
+    {
+    // Replace the code below
+    if (this.size != list.size) {
+    	return false;
+    }
+    for (int i = 0; i < size; i++) {
+    	if (this.list[i] == list.list[i]) {
+    		return true;
+    	}
+    }
+   return false;
+    }
     /*
     * Removes all the elements from list
     * Think about this case and make the method
