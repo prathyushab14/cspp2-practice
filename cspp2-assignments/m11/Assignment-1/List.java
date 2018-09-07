@@ -225,10 +225,10 @@ public class List {
      public void removeAll(int[] newArray)
      {
         // write the logic
-        for (int i = 0; i < newArray.length; i++) {
-        	for (int j = 0; j < list.length; j++) {
-        	    if (list[j] == newArray[i]) {
-        	    	remove(j);
+        for (int i = 0; i < list.length; i++) {
+        	for (int j = 0; j < newArray.length; j++) {
+        	    if (list[i] == newArray[j]) {
+        	    	remove(i);
         	    }
             }
         }
