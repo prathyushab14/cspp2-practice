@@ -58,7 +58,7 @@ public class List {
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
+     *
      */
     // declare a private int size
     // again, don't initialize it here
@@ -135,7 +135,7 @@ public class List {
      * resize the list.
      */
     private void resize() {
-        list = Arrays.copyOf(list, 2*size);
+        list = Arrays.copyOf(list, 2 * size);
     }
     /*
      * The remove method does what the name suggests. Removes an int item,
@@ -264,16 +264,15 @@ public class List {
         return -1;
     }
     /*
-    Inserts all the elements of specified int array to the end of list    
+    Inserts all the elements of specified int array to the end of list  
     */
 
     /**
      * Adds all.
      *
-     * @param      items  The items
+     * @param      newArray  The items
      */
-    public void addAll(int[] newArray)
-    {
+    public void addAll(final int[] newArray) {
         // write the logic
         for (int i = 0; i < newArray.length; i++) {
             list[size] = newArray[i];
@@ -286,12 +285,12 @@ public class List {
     }
     /*
      Removes all of its elements that are contained in the specified int 
-     array.    
+     array.
     */
    /**
      * removes all.
      *
-     * @param      items  The items
+     * @param      newArray  The items
      */
      public void removeAll(final int[] newArray) {
         // write the logic
@@ -307,13 +306,13 @@ public class List {
     /*
     Returns a list object containing elements, including startIndex and
     excluding endIndex. The first parameter indicates the startIndex and the
-    second parameter indicates the endIndex. Returns null and print 
+    second parameter indicates the endIndex. Returns null and print
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
     /**
-     * 
-     * 
+     *
+     *
      * sublist.
      *
      * @param      start  The start
@@ -321,8 +320,7 @@ public class List {
      *
      * @return     sublist
      */
-    public List subList(final int start, final int end) 
-    {
+    public List subList(final int start, final int end) {
     // write the logic for subList
         if (start < 0 || end < 0 || start > end || end > size || size == 0) {
             System.out.println("Index Out of Bounds Exception");
@@ -331,7 +329,7 @@ public class List {
         List ls = new List(end - start);
         for (int i = start; i < end; i++) {
                 ls.add(list[i]);
-            }return ls;
+            } return ls;
         }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
@@ -369,7 +367,7 @@ public class List {
         size = 0;
     }
     /**
-     * main function
+     * main function.
      *
      * @param      args  The arguments
      */
@@ -389,7 +387,7 @@ public class List {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-                    if (tokens.length == 2){
+                    if (tokens.length == 2) {
                         String[] t = tokens[1].split(",");
                         if (t.length == 1) {
                             l.add(Integer.parseInt(tokens[1]));
@@ -451,7 +449,7 @@ public class List {
                     } 
                     String[] arrstring3 = tokens[1].split(",");
                     List object = l.subList(Integer.parseInt(arrstring3[0]),
-                            Integer.parseInt(arrstring3[1]));
+                        Integer.parseInt(arrstring3[1]));
                     if (object != null) {
                         System.out.println(object);
                     }
