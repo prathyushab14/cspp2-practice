@@ -262,7 +262,7 @@ public class List {
     if (this.size != list.size) {
     	return false;
     }
-    for (int i = 0; i <= size; i++) {
+    for (int i = 0; i < size; i++) {
     	if (this.list[i] == list.list[i]) {
     		return true;
     	}
