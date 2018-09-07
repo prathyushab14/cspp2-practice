@@ -90,7 +90,7 @@ public class List {
     	size = 0;
     	list = new int[capacity];
     }
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         list[size++] = item;
     }
@@ -124,7 +124,7 @@ public class List {
      * [1,3,0,0,0,0,0,0,0,0] The method returns void (nothing)
      *
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
         if (index >= 0 && index < size) {
@@ -147,7 +147,7 @@ public class List {
      * exist. How do we check if the position is greater than the number of
      * items in the list? Would size variable be useful?
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         if (index < 0 || index >= size) {
             return -1;
@@ -187,7 +187,7 @@ public class List {
      * the method So, iterate through the list and return true if the item
      * exists and otherwise false
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
         return indexOf(item) == -1;
     }
@@ -223,8 +223,7 @@ public class List {
      Removes all of its elements that are contained in the specified int 
      array.    
     */
-     public void removeAll(int[] newArray)
-     {
+     public void removeAll(final int[] newArray) {
         // write the logic
         for (int item : newArray) {
         	for (int i = 0; i < size; i++) {
@@ -242,7 +241,7 @@ public class List {
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
-    public List subList(int start, int end) 
+    public List subList(final int start, final int end) 
     {
     // write the logic for subList
     	if (start < 0 || end < 0 || start > end || end > size || size == 0) {
@@ -258,7 +257,7 @@ public class List {
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
     */
-    public boolean equals(List list) 
+    public boolean equals(final List list) 
     {
     // Replace the code below
     if (size != list.size) {
@@ -283,7 +282,7 @@ public class List {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -339,7 +338,7 @@ public class List {
                         String[] t1 = tokens[1].split(",");
                         int[] temp = new int[t1.length];
                         for(int i = 0; i < temp.length; i++) {
-                            temp[i]=Integer.parseInt(t1[i]);
+                            temp[i] = Integer.parseInt(t1[i]);
                         }
                         l.addAll(temp);
                     }
