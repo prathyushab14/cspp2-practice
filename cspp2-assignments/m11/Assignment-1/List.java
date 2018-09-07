@@ -226,10 +226,13 @@ public class List {
      {
         // write the logic
         for (int i = 0; i < newArray.length; i++) {
-        	remove(i);
+        	for (int j = 0; j < list.length; j++) {
+        	    if (list[j] == newArray[i]) {
+        	    	remove(j);
+        	    }
+            }
         }
-
-     }
+    }
     /*
     Returns a list object containing elements, including startIndex and
     excluding endIndex. The first parameter indicates the startIndex and the
@@ -237,26 +240,33 @@ public class List {
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
-    // public List subList(int start, int end) 
-    // {
-    // // write the logic for subList
-    // // 	List ls = new List()
-    // // 	for (int i = start; i < end; i++) {
-    // // 		list[size++] = list[i];
-    // // 	}
-    // // return nlist;
-    // }
+    public List subList(int start, int end) 
+    {
+    // write the logic for subList
+    	if (!(start < 0 && start > end && end < 0)) {
+    		List ls = new List(end - start);
+    	for (int i = start; i < end; i++) {
+    			ls.add(list[i]);
+    		}return ls;
+    	}
+    System.out.println("Index Out of Bounds Exception");
+    return null;
+    }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
     */
-    // public boolean equals(List list ) 
+    // public boolean equals(List list1) 
     // {
     // // Replace the code below
-    // 	if (Arrays.equals(list, list)) {
-    // 		return true;
-    // 	}
-    // return false;
+    // 	for(int i = 0; i < list1.length; i++) {
+    // 		for (int j = 0; j < list.length; j++) {
+    // 			if (list1[i] == list[j]) {
+    // 				return true;
+    // 			}
+    // 		}
+    //     }
+    //     return false;
     // }
     /*
     * Removes all the elements from list
@@ -340,15 +350,15 @@ public class List {
                         l.removeAll(a);
                     }
                 break;
-                // case "subList": {
-                //     if (tokens.length != 2) break;
-                //     String[] arrstring3 = tokens[1].split(",");
-                //     List object = l.subList(Integer.parseInt(arrstring3[0]),
-                //             Integer.parseInt(arrstring3[1]));
-                //     if (object != null) 
-                //         System.out.println(object);
-                //     break;
-                // }
+                case "subList": {
+                    if (tokens.length != 2) break;
+                    String[] arrstring3 = tokens[1].split(",");
+                    List object = l.subList(Integer.parseInt(arrstring3[0]),
+                            Integer.parseInt(arrstring3[1]));
+                    if (object != null) 
+                        System.out.println(object);
+                    break;
+                }
                 // case "equals":
                 //     if (tokens.length == 2) {
                 //         String[] lt = tokens[1].split(",");
