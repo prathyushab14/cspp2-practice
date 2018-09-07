@@ -149,7 +149,7 @@ public class List<E> {
         for (i = 0; i < size - 1; i++) {
             str = str + list[i] + ",";
         }
-        str = str + list[i] + "]";
+        str = str + list[size] + "]";
         return str;
     }
     /*
