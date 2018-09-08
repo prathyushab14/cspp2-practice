@@ -38,9 +38,6 @@ class Set {
 	    return res;
     }
     public void add(int item) {
-	    if (size == set.length) {
-		    resize();
-	    }
 	    set[size++] = item;
 	}
     private void resize() {
