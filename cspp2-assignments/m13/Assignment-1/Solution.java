@@ -48,7 +48,8 @@ class Set {
     }
     public void add(int[] items) {
 	    for (int i : items) {
-		    add(i);
+		    set[size] = i;
+		    size++;
 	    }
     }
 }
