@@ -27,9 +27,7 @@ class Set {
     	return false;
     }
     public void add(int item) {
-    	if (!(contains(item))) {
-    		set[size++] = item;
-    	}
+    	set[size++] = item;
     }
     public String tostring() {
     	if (size == 0) {
