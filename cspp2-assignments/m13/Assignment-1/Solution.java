@@ -9,47 +9,43 @@ import java.util.Arrays;
 class Set {
     //your code goes here...
     //Good luck :-)
-       int[] set;
-       int size;
+    int[] set;
+    int size;
     public Set() {
-	    int[] set = new int[10];
-	    int size = 0;
+    	int[] set = new int[10];
+    	int size =0;
     }
     public int size() {
-	    return size;
+    	return size;
     }
     public boolean contains(int item) {
-        for (int i = 0; i < size; i++) {
-    	    if (item == set[i]) {
-    		    return true;
-    	    }
-        }
-        return false;
+    	for (int i = 0; i < size; i++) {
+    		if (set[i] == item) {
+    			return true;
+    		}
+    	}
+    	return false;
     }
-    public String toString() {
+    public void add(int item) {
+    	if (!(contains(item))) {
+    		set[size++] = item;
+    	}
+    }
+    public String tostring() {
     	if (size == 0) {
     		return "{}";
     	}
-	    String res = "{";
-	    for (int i = 0; i < size; i++) {
-		    res = res + set[i] + ",";
-	    }
-	    res = res + set[size-1] + "}";
-	    return res;
-    }
-    public void add(int item) {
-    	if(!contains(item)) {
-    		set[size++] = item;
+    	String res = "{";
+    	for(int i = 0; i < size-1;i++) {
+    		res += set[i] + ",";
     	}
-	}
-    private void resize() {
-	    set = Arrays.copyOf(set, 2 * size);
+    	res = res + set[size-1] + "}";
+    	return res;
     }
-    public void add(int[] items) {
-	    for (int i : items) {
-		    set[size] = i;
-		    size++;
-	    }
+    public void add(int[] intarray) {
+    	for (int i : intarray) {
+    		add(i);
+    	}
     }
 }
 /**
