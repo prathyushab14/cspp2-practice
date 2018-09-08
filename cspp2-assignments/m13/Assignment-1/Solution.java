@@ -15,7 +15,8 @@ class Set {
      * Constructs the object.
      */
     public Set() {
-    	set = new int[10];
+    	final int ten = 10;
+    	set = new int[ten];
     	size = 0;
     }
     /**
@@ -80,10 +81,10 @@ class Set {
     		return "{}";
     	}
     	String res = "{";
-    	for(int i = 0; i < size-1;i++) {
+    	for (int i = 0; i < size - 1; i++) {
     		res += set[i] + ", ";
     	}
-    	res = res + set[size-1] + "}";
+    	res = res + set[size - 1] + "}";
     	return res;
     }
     /**
@@ -124,11 +125,12 @@ class Set {
     public Set retainAll(final int[] intArray) {
     Set na = new Set();
     for (int i = 0; i < size; i++) {
-        for (int j = 0; j < intArray.length; j++)
+        for (int j = 0; j < intArray.length; j++) {
             if (intArray[j] == set[i]) {
                 na.add(set[i]);
             }
         }
+    }
     return na;
     }
     /**
