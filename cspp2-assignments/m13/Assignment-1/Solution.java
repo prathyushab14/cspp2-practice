@@ -13,14 +13,17 @@ class Set {
     set int array.
     **/
     private int[] set;
+    /**
+     * size of set.
+     */
     private int size;
     /**
      * Constructs the object.
      */
     Set() {
-    	final int ten = 10;
-    	set = new int[ten];
-    	size = 0;
+        final int ten = 10;
+        set = new int[ten];
+        size = 0;
     }
     /**
      * Constructs the object.
@@ -28,8 +31,8 @@ class Set {
      * @param      n    size of the set
      */
     Set(final int n) {
-    	set = new int[n];
-    	size = 0;
+        set = new int[n];
+        size = 0;
     }
     /**
      * size of the set.
@@ -37,13 +40,13 @@ class Set {
      * @return     size
      */
     public int size() {
-    	return size;
+        return size;
     }
     /**
      * changes the size.
      */
     private void resize() {
-    	set = Arrays.copyOf(set, 2 * size);
+        set = Arrays.copyOf(set, 2 * size);
     }
     /**
      * checks if item is in set.
@@ -53,12 +56,12 @@ class Set {
      * @return     true or false
      */
     public boolean contains(final int item) {
-    	for (int i = 0; i < size; i++) {
-    		if (set[i] == item) {
-    			return true;
-    		}
-    	}
-    	return false;
+        for (int i = 0; i < size; i++) {
+            if (set[i] == item) {
+                return true;
+            }
+        }
+        return false;
     }
     /**
      * adds elements into set.
@@ -66,13 +69,13 @@ class Set {
      * @param      item  The item
      */
     public void add(final int item) {
-    	if (size == set.length) {
-    	 	resize();
-    	}
-    	if (!(contains(item))) {
-    	    set[size] = item;
-    	    size++;
-    	}
+        if (size == set.length) {
+            resize();
+        }
+        if (!(contains(item))) {
+            set[size] = item;
+            size++;
+        }
     }
     /**
      * Returns a string representation of the object.
@@ -80,15 +83,15 @@ class Set {
      * @return     String representation of the object.
      */
     public String toString() {
-    	if (size == 0) {
-    		return "{}";
-    	}
-    	String res = "{";
-    	for (int i = 0; i < size - 1; i++) {
-    		res += set[i] + ", ";
-    	}
-    	res = res + set[size - 1] + "}";
-    	return res;
+        if (size == 0) {
+            return "{}";
+        }
+        String res = "{";
+        for (int i = 0; i < size - 1; i++) {
+            res += set[i] + ", ";
+        }
+        res = res + set[size - 1] + "}";
+        return res;
     }
     /**
      * adds an array of elements.
@@ -96,9 +99,9 @@ class Set {
      * @param      intArray  The int array
      */
     public void add(final int[] intArray) {
-    	for (int i : intArray) {
-    		add(i);
-    	}
+        for (int i : intArray) {
+            add(i);
+        }
     }
     /**
      * returns elements that are in both sets.
@@ -108,15 +111,15 @@ class Set {
      * @return   intersection set
      */
     public Set intersection(final Set t) {
-    	Set ns = new Set();
-    	for (int i = 0; i < size; i++) {
-    		for (int j = 0; j < t.set.length; j++) {
-    			if (t.set[j] == set[i]) {
-    				ns.add(set[i]);
-    			}
-    		}
-    	}
-    	return ns;
+        Set ns = new Set();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < t.set.length; j++) {
+                if (t.set[j] == set[i]) {
+                    ns.add(set[i]);
+                }
+            }
+        }
+        return ns;
     }
     /**
      * returns  elements.
@@ -144,18 +147,18 @@ class Set {
      * @return    array set
      */
     public int[][] cartesianProduct(final Set t) {
-    	if (size == 0 || t.size() == 0) {
-    		return null;
-    	}
-    	int[][] arr = new int[size * t.size()][2];
-    	int k = 0;
-    	for (int i = 0; i < size; i++) {
-    		for (int j = 0; j < t.size(); j++) {
-    			arr[k][0] = set[i];
-    			arr[k++][1] = t.set[j];
-    		}
-    	}
-    	return arr;
+        if (size == 0 || t.size() == 0) {
+            return null;
+        }
+        int[][] arr = new int[size * t.size()][2];
+        int k = 0;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < t.size(); j++) {
+                arr[k][0] = set[i];
+                arr[k++][1] = t.set[j];
+            }
+        }
+        return arr;
     }
 }
 /**
