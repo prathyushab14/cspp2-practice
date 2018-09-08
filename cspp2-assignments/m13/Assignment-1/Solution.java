@@ -69,16 +69,16 @@ class Set {
     	}
     	return ns;
     }
-    // public Set retainAll(int[] intarr) {
-    // Set na = new Set(10);
-    // for (int i = 0; i < size; i++) {
-    //     for (int j = 0; j < intarr.length; j++)
-    //         if (intarr[j] ==set[i]) {
-    //             na.add(set[i]);
-    //         }
-    //     }
-    // return na;
-    // }
+    public Set retainAll(int[] intArray) {
+    Set na = new Set();
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < intArray.length; j++)
+            if (intArray[j] == set[i]) {
+                na.add(set[i]);
+            }
+        }
+    return na;
+    }
 }
 /**
  * Solution class for code-eval.
@@ -153,13 +153,13 @@ public final class Solution {
                 t.add(intArray);
                 System.out.println(s.intersection(t));
                 break;
-                // case "retainAll":
-                // s = new Set();
-                // intArray = intArray(tokens[1]);
-                // s.add(intArray);
-                // intArray = intArray(tokens[2]);
-                // System.out.println(s.retainAll(intArray));
-                // break;
+                case "retainAll":
+                s = new Set();
+                intArray = intArray(tokens[1]);
+                s.add(intArray);
+                intArray = intArray(tokens[2]);
+                System.out.println(s.retainAll(intArray));
+                break;
                 // // case "cartesianProduct":
                 // // s = new Set();
                 // // t = new Set();
