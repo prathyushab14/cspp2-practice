@@ -4,11 +4,14 @@ import java.util.Arrays;
 
 /**
  * Class for set.
- * @author : 
+ * @author :
  */
 class Set {
     //your code goes here...
     //Good luck :-)
+    /**
+    set int array.
+    **/
     int[] set;
     int size;
     /**
