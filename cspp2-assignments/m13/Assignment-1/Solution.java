@@ -17,7 +17,7 @@ class Set {
     /**
      * Constructs the object.
      */
-    public Set() {
+    Set() {
     	final int ten = 10;
     	set = new int[ten];
     	size = 0;
@@ -27,7 +27,7 @@ class Set {
      *
      * @param      n    size of the set
      */
-    public Set(final int n) {
+    Set(final int n) {
     	set = new int[n];
     	size = 0;
     }
