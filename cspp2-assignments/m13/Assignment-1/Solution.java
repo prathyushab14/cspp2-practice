@@ -27,11 +27,11 @@ class Set {
         return false;
     }
     public String toString() {
-	    String res = "[";
+	    String res = "{";
 	    for (int i = 0; i < size - 1; i++) {
 		    res = res + set[i] + ",";
 	    }
-	    res = res + set[size-1] + "]";
+	    res = res + set[size-1] + "}";
 	    return res;
     }
     public void add(int item) {
