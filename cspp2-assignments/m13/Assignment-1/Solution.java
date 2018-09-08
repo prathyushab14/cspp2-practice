@@ -38,8 +38,10 @@ class Set {
 	    return res;
     }
     public void add(int item) {
-	    set[size] = item;
-	    size++;
+    	if (size == set.length) {
+    		resize();
+    	}
+	    set[size++] = item;
 	}
     private void resize() {
 	    set = Arrays.copyOf(set, 2 * size);
