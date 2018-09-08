@@ -37,11 +37,11 @@ class Set {
 	    res = res + set[size-1] + "}";
 	    return res;
     }
-    public void add(int item) {
+    public void add(int intArray) {
     	if (size == set.length) {
     		resize();
     	}
-	    set[size++] = item;
+	    set[size++] = intArray;
 	}
     private void resize() {
 	    set = Arrays.copyOf(set, 2 * size);
