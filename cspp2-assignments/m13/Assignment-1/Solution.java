@@ -58,17 +58,17 @@ class Set {
     		add(i);
     	}
     }
-    // public Set intersection(int[] intarr) {
-    // 	Set ns = new Set(10);
-    // 	for (int i = 0; i < size; i++) {
-    // 		for (int j = 0; j < intarr.length; j++) {
-    // 			if (intarr[j] == set[i]) {
-    // 				ns.add(set[i]);
-    // 			}
-    // 		}
-    // 	}
-    // 	return ns;
-    // }
+    public Set intersection(Set t) {
+    	Set ns = new Set();
+    	for (int i = 0; i < size; i++) {
+    		for (int j = 0; j < t.set.length; j++) {
+    			if (t.set[j] == set[i]) {
+    				ns.add(set[i]);
+    			}
+    		}
+    	}
+    	return ns;
+    }
     // public Set retainAll(int[] intarr) {
     // Set na = new Set(10);
     // for (int i = 0; i < size; i++) {
@@ -144,15 +144,15 @@ public final class Solution {
                     s.add(intArray);
                 }
                 break;
-                // case "intersection":
-                // s = new Set();
-                // Set t = new Set();
-                // intArray = intArray(tokens[1]);
-                // s.add(intArray);
-                // intArray = intArray(tokens[2]);
-                // t.add(intArray);
-                // System.out.println(s.intersection(t));
-                // break;
+                case "intersection":
+                s = new Set();
+                Set t = new Set();
+                intArray = intArray(tokens[1]);
+                s.add(intArray);
+                intArray = intArray(tokens[2]);
+                t.add(intArray);
+                System.out.println(s.intersection(t));
+                break;
                 // case "retainAll":
                 // s = new Set();
                 // intArray = intArray(tokens[1]);
