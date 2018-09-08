@@ -31,7 +31,7 @@ class Set {
     		return "{}";
     	}
 	    String res = "{";
-	    for (int i = 0; i < size - 1; i++) {
+	    for (int i = 0; i < size; i++) {
 		    res = res + set[i] + ",";
 	    }
 	    res = res + set[size-1] + "}";
