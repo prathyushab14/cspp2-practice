@@ -12,12 +12,12 @@ class Set {
     int[] set;
     int size;
     public Set() {
-    	int[] set = new int[10];
-    	int size = 0;
+    	set = new int[10];
+    	size = 0;
     }
     public Set(int n) {
-    	int[] set = new int[n];
-    	int size = 0;
+    	set = new int[n];
+    	size = 0;
     }
     public int size() {
     	return size;
