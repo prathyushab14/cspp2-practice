@@ -27,6 +27,9 @@ class Set {
         return false;
     }
     public String toString() {
+    	if (size == 0) {
+    		return "{}";
+    	}
 	    String res = "{";
 	    for (int i = 0; i < size - 1; i++) {
 		    res = res + set[i] + ",";
