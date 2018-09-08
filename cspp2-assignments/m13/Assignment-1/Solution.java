@@ -41,12 +41,8 @@ class Set {
 	    if (size == set.length) {
 		    resize();
 	    }
-	    for (int i = 0; i< size; i++) {
-		    if (set[i] != item) {
-			    set[size++] = item;
-		    }
-	    }
-    }
+	    set[size++] = item;
+	}
     private void resize() {
 	    set = Arrays.copyOf(set, 2 * size);
     }
