@@ -33,7 +33,7 @@ class Set {
     public void add(int item) {
     	set[size++] = item;
     }
-    public String tostring() {
+    public String toString() {
     	if (size == 0) {
     		return "{}";
     	}
