@@ -38,7 +38,8 @@ class Set {
 	    return res;
     }
     public void add(int item) {
-	    set[size++] = item;
+	    set[size] = item;
+	    size++;
 	}
     private void resize() {
 	    set = Arrays.copyOf(set, 2 * size);
