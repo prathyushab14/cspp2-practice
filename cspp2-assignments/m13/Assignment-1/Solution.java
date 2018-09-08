@@ -12,8 +12,8 @@ class Set {
     /**
     set int array.
     **/
-    int[] set;
-    int size;
+    private int[] set;
+    private int size;
     /**
      * Constructs the object.
      */
