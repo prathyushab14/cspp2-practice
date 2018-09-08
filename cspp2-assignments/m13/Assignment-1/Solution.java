@@ -80,6 +80,9 @@ class Set {
     return na;
     }
     public int[][] cartesianProduct(Set t) {
+    	if (size == 0 || t.size() == 0) {
+    		return null;
+    	}
     	int[][] arr = new int[size * t.size()][2];
     	int k = 0;
     	for (int i = 0; i < size; i++) {
