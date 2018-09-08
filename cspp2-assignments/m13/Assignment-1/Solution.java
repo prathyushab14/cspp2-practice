@@ -13,7 +13,11 @@ class Set {
     int size;
     public Set() {
     	int[] set = new int[10];
-    	int size =0;
+    	int size = 0;
+    }
+    public Set(int n) {
+    	int[] set = new int[n];
+    	int size = 0;
     }
     public int size() {
     	return size;
@@ -45,6 +49,18 @@ class Set {
     		add(i);
     	}
     }
+    // public int[] intersection(int[] intarr) {
+    // 	int[] ns = new int[10];
+    // 	for (int i = 0; i < size; i++) {
+    // 		for (int j = 0; j < intarr.length; j++) {
+    // 			if (intarr[j] == set[i]) {
+    // 				ns.add(set[i]);
+    // 			}
+    // 		}
+    // 	}
+    // 	return ns;
+    // }
+
 }
 /**
  * Solution class for code-eval.
