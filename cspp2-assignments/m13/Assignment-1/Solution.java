@@ -11,21 +11,44 @@ class Set {
     //Good luck :-)
     int[] set;
     int size;
+    /**
+     * Constructs the object.
+     */
     public Set() {
     	set = new int[10];
     	size = 0;
     }
-    public Set(int n) {
+    /**
+     * Constructs the object.
+     *
+     * @param      n    size of the set
+     */
+    public Set(final int n) {
     	set = new int[n];
     	size = 0;
     }
+    /**
+     * size of the set.
+     *
+     * @return     size
+     */
     public int size() {
     	return size;
     }
+    /**
+     * changes the size.
+     */
     private void resize() {
     	set = Arrays.copyOf(set, 2 * size);
     }
-    public boolean contains(int item) {
+    /**
+     * checks if item is in set.
+     *
+     * @param      item  The item
+     *
+     * @return     true or false
+     */
+    public boolean contains(final int item) {
     	for (int i = 0; i < size; i++) {
     		if (set[i] == item) {
     			return true;
@@ -33,7 +56,12 @@ class Set {
     	}
     	return false;
     }
-    public void add(int item) {
+    /**
+     * adds elements into set.
+     *
+     * @param      item  The item
+     */
+    public void add(final int item) {
     	if (size == set.length) {
     	 	resize();
     	}
@@ -42,6 +70,11 @@ class Set {
     	    size++;
     	}
     }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
     	if (size == 0) {
     		return "{}";
@@ -53,12 +86,24 @@ class Set {
     	res = res + set[size-1] + "}";
     	return res;
     }
-    public void add(int[] intArray) {
+    /**
+     * adds an array of elements.
+     *
+     * @param      intArray  The int array
+     */
+    public void add(final int[] intArray) {
     	for (int i : intArray) {
     		add(i);
     	}
     }
-    public Set intersection(Set t) {
+    /**
+     * returns elements that are in both sets.
+     *
+     * @param      t     object of set
+     *
+     * @return   intersection set
+     */
+    public Set intersection(final Set t) {
     	Set ns = new Set();
     	for (int i = 0; i < size; i++) {
     		for (int j = 0; j < t.set.length; j++) {
@@ -69,7 +114,14 @@ class Set {
     	}
     	return ns;
     }
-    public Set retainAll(int[] intArray) {
+    /**
+     * returns  elements.
+     *
+     * @param      intArray  The int array
+     *
+     * @return     returns elements that are in both sets
+     */
+    public Set retainAll(final int[] intArray) {
     Set na = new Set();
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < intArray.length; j++)
@@ -79,7 +131,14 @@ class Set {
         }
     return na;
     }
-    public int[][] cartesianProduct(Set t) {
+    /**
+     * cartesian product.
+     *
+     * @param      t     { parameter_description }
+     *
+     * @return    array set
+     */
+    public int[][] cartesianProduct(final Set t) {
     	if (size == 0 || t.size() == 0) {
     		return null;
     	}
