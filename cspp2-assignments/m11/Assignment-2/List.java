@@ -55,7 +55,7 @@ public class List<E> {
     /**
      * { function_description }
      */
-    private void resize(){
+    private void resize() {
         list = Arrays.copyOf(list, 2 * size);
     }
 
@@ -95,7 +95,9 @@ public class List<E> {
             for (int i = index; i < size - 1; i++) {
                 list[i] = list[i + 1];
             }
+            list[size - 1] = null;
             size--;
+
         } else {
             System.out.println("Invalid Position Exception");
         }
