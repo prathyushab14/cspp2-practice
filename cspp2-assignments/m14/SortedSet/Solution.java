@@ -6,7 +6,6 @@ class SortedSet extends Set {
      * default constructor.
      */
     public SortedSet() {
-        
     }
     /**
      * subset consits of elements from starting element to end element.
@@ -16,20 +15,20 @@ class SortedSet extends Set {
      *
      * @return    a subset array
      */
-    public int[] subSet(int fromElement, int toElement) {
+    public int[] subSet(final int fromElement, final int toElement) {
         int[] arr = new int[10];
         if (fromElement > toElement) {
             System.out.println("Invalid Arguments to Subset Exception");
             return null;
         }
         int count=0;
-        for (int i = 0,j=0; i < size; i++) {
+        for (int i = 0, j=0; i < size; i++) {
             if (set[i] >= fromElement && set[i] < toElement) {
-                arr[j++]=set[i];
+                arr[j++] = set[i];
                 count++;
             }
         }
-        return Arrays.copyOf(arr,count);
+        return Arrays.copyOf(arr, count);
     }
     /**
      * headset array consists of elements less than the given element.
@@ -38,16 +37,17 @@ class SortedSet extends Set {
      *
      * @return     an array
      */
-    public int[] headSet(int toElement) {
-        int[] array = new int[10];
+    public int[] headSet(final int toElement) {
+        final int ten = 10;
+        int[] array = new int[ten];
         int count = 0;
-        for (int i = 0,j=0; i < size; i++) {
+        for (int i = 0, j = 0; i < size; i++) {
             if (set[i] < toElement) {
-                array[j++]=set[i];
+                array[j++] = set[i];
                 count++;
             }
         }
-        return Arrays.copyOf(array,count);
+        return Arrays.copyOf(array, count);
     }
     /**
      * last element of set.
@@ -56,7 +56,7 @@ class SortedSet extends Set {
      */
     public int last() {
         if (size != 0) {
-            return set[size - 1];   
+            return set[size - 1];
         }
         System.out.println("Set Empty Exception");
         return -1;
@@ -66,7 +66,7 @@ class SortedSet extends Set {
      *
      * @param      ar    The archive
      */
-    public void addAll(int[] ar) {
+    public void addAll(final int[] ar) {
         for (int i : ar) {
             add(i);
         }
@@ -77,9 +77,8 @@ class SortedSet extends Set {
      *
      * @param      ele   The element
      */
-    public void add(int ele) {
+    public void add(final int ele) {
         int index = 0;
- 
         if (!(contains(ele))) {
             int i;
             for (i = 0; i < size; i++) {
@@ -167,7 +166,7 @@ public final class Solution {
                         break;
                     }
                     String[] arrstring3 = tokens[1].split(",");
-                    int[] tmp =s.subSet(Integer.parseInt(arrstring3[0]),
+                    int[] tmp = s.subSet(Integer.parseInt(arrstring3[0]),
                         Integer.parseInt(arrstring3[1]));
                     if (tmp != null) {
                         System.out.println(Arrays.toString(
@@ -176,8 +175,8 @@ public final class Solution {
                     }
                 break;
                 case "headSet":
-                    System.out.println(Arrays.toString
-                        (s.headSet(Integer.parseInt(
+                    System.out.println(Arrays.toString(
+                        s.headSet(Integer.parseInt(
                             tokens[1]))).replace(
                         "[", "{").replace("]", "}"));
                 break;
