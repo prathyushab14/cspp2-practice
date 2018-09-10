@@ -1,11 +1,14 @@
 import java.util.Scanner;
 import java.io.BufferedInputStream;
 import java.util.Arrays;
+/**
+ * Class for sorted set.
+ */
 class SortedSet extends Set {
     /**
      * default constructor.
      */
-    public SortedSet() {
+    SortedSet() {
     }
     /**
      * subset consits of elements from starting element to end element.
@@ -16,13 +19,14 @@ class SortedSet extends Set {
      * @return    a subset array
      */
     public int[] subSet(final int fromElement, final int toElement) {
-        int[] arr = new int[10];
+        final int ten = 10; 
+        int[] arr = new int[ten];
         if (fromElement > toElement) {
             System.out.println("Invalid Arguments to Subset Exception");
             return null;
         }
-        int count=0;
-        for (int i = 0, j=0; i < size; i++) {
+        int count = 0;
+        for (int i = 0, j = 0; i < size; i++) {
             if (set[i] >= fromElement && set[i] < toElement) {
                 arr[j++] = set[i];
                 count++;
