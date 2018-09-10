@@ -2,11 +2,8 @@ import java.util.Scanner;
 import java.io.BufferedInputStream;
 import java.util.Arrays;
 class SortedSet extends Set {
-	int[] set1;
-	int size;
 	public SortedSet() {
-		set1 = new int[10];
-		size = 0;
+		
 	}
 	public int[] subSet(int fromElement, int toElement) {
 	    int[] arr = new int[10];
@@ -15,8 +12,8 @@ class SortedSet extends Set {
 	    }
 	    int count=0;
 	    for (int i = 0,j=0; i < size; i++,j++) {
-		    if (set1[i] > fromElement && set1[i] < toElement) {
-			    arr[j]=set1[i];
+		    if (set[i] > fromElement && set[i] < toElement) {
+			    arr[j]=set[i];
 			    count++;
 		    }
 	    }
@@ -26,8 +23,8 @@ class SortedSet extends Set {
     	int[] array = new int[10];
     	int count = 0;
     	for (int i = 0,j=0; i < size; i++,j++) {
-    		if (set1[i] < toElement) {
-    			array[j]=set1[i];
+    		if (set[i] < toElement) {
+    			array[j]=set[i];
     			count++;
     		}
     	}
@@ -35,7 +32,7 @@ class SortedSet extends Set {
     }
     public int last() {
     	if (size != 0) {
-    		return set1[size - 1];	
+    		return set[size - 1];	
     	}
     	System.out.println("Set Empty Exception");
     	return -1;
@@ -45,22 +42,27 @@ class SortedSet extends Set {
     		add(i);
     	}
     }
+    @Override
     public void add(int ele) {
+    	System.out.println(ele);
     	int index = 0;
-    	if (size == 0) {
-    		set1[size++] = ele;
-    	}
+ 
     	if (!(contains(ele))) {
-    	    for (int i = 0; i < size; i++) {
-    		    if (set1[i] > ele) {
+    		int i;
+    	    for (i = 0; i < size; i++) {
+    		    if (set[i] > ele) {
     		    	index = i;
-    		    	break;
+ 					break;
     		    }
     	    }
-    	    for (int j = size; j > index; j--) {
-    	    	set1[j] = set1[j - 1];
+    	    if (i == size) {
+    	    	index = i;
     	    }
-    	    set1[index] = ele;
+    	    for (int j = size; j > index; j--) {
+    	    	set[j] = set[j - 1];
+    	    }
+    	    set[index] = ele;
+    	    size++;
         }
     }
 }
