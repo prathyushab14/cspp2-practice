@@ -34,7 +34,11 @@ class SortedSet extends Set {
     	return Arrays.copyOf(array,count);
     }
     public int last() {
-    	return set1[size - 1];
+    	if (size != 0) {
+    		return set1[size - 1];	
+    	}
+    	System.out.println("Set Empty Exception");
+    	return -1;
     }
     public void addAll(int[] ar) {
     	for (int i : ar) {
@@ -139,6 +143,10 @@ public final class Solution {
                 break;
                 case "last":
                 System.out.println(s.last());
+                break;
+                case "add":
+                    String[] t = tokens[1].split(",");
+                    s.add(Integer.parseInt(tokens[1]));
                 break;
                 default:
                 break;
