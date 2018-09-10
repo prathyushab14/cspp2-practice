@@ -12,7 +12,7 @@ class SortedSet extends Set {
 	    }
 	    int count=0;
 	    for (int i = 0,j=0; i < size; i++,j++) {
-		    if (set[i] > fromElement && set[i] < toElement) {
+		    if (set[i] >= fromElement && set[i] < toElement) {
 			    arr[j]=set[i];
 			    count++;
 		    }
