@@ -2,70 +2,106 @@ import java.util.Scanner;
 import java.io.BufferedInputStream;
 import java.util.Arrays;
 class SortedSet extends Set {
-	public SortedSet() {
-		
-	}
-	public int[] subSet(int fromElement, int toElement) {
-	    int[] arr = new int[10];
-	    if (fromElement > toElement) {
-		    System.out.println("Invalid Arguments to Subset Exception");
-		    return null;
-	    }
-	    int count=0;
-	    for (int i = 0,j=0; i < size; i++) {
-		    if (set[i] >= fromElement && set[i] < toElement) {
-			    arr[j++]=set[i];
-			    count++;
-		    }
-	    }
-	    return Arrays.copyOf(arr,count);
+    /**
+     * default constructor.
+     */
+    public SortedSet() {
+        
     }
+    /**
+     * subset consits of elements from starting element to end element.
+     *
+     * @param      fromElement  The from element
+     * @param      toElement    To element
+     *
+     * @return    a subset array
+     */
+    public int[] subSet(int fromElement, int toElement) {
+        int[] arr = new int[10];
+        if (fromElement > toElement) {
+            System.out.println("Invalid Arguments to Subset Exception");
+            return null;
+        }
+        int count=0;
+        for (int i = 0,j=0; i < size; i++) {
+            if (set[i] >= fromElement && set[i] < toElement) {
+                arr[j++]=set[i];
+                count++;
+            }
+        }
+        return Arrays.copyOf(arr,count);
+    }
+    /**
+     * headset array consists of elements less than the given element.
+     *
+     * @param      toElement  To element
+     *
+     * @return     an array
+     */
     public int[] headSet(int toElement) {
-    	int[] array = new int[10];
-    	int count = 0;
-    	for (int i = 0,j=0; i < size; i++) {
-    		if (set[i] < toElement) {
-    			array[j++]=set[i];
-    			count++;
-    		}
-    	}
-    	return Arrays.copyOf(array,count);
+        int[] array = new int[10];
+        int count = 0;
+        for (int i = 0,j=0; i < size; i++) {
+            if (set[i] < toElement) {
+                array[j++]=set[i];
+                count++;
+            }
+        }
+        return Arrays.copyOf(array,count);
     }
+    /**
+     * last element of set.
+     *
+     * @return     last element of the set
+     */
     public int last() {
-    	if (size != 0) {
-    		return set[size - 1];	
-    	}
-    	System.out.println("Set Empty Exception");
-    	return -1;
+        if (size != 0) {
+            return set[size - 1];   
+        }
+        System.out.println("Set Empty Exception");
+        return -1;
     }
+    /**
+     * Adds all elements of the array.
+     *
+     * @param      ar    The archive
+     */
     public void addAll(int[] ar) {
-    	for (int i : ar) {
-    		add(i);
-    	}
+        for (int i : ar) {
+            add(i);
+        }
     }
     @Override
+    /**
+     * adds the given element to the set.
+     *
+     * @param      ele   The element
+     */
     public void add(int ele) {
-    	int index = 0;
+        int index = 0;
  
-    	if (!(contains(ele))) {
-    		int i;
-    	    for (i = 0; i < size; i++) {
-    		    if (set[i] > ele) {
-    		    	index = i;
- 					break;
-    		    }
-    	    }
-    	    if (i == size) {
-    	    	index = i;
-    	    }
-    	    for (int j = size; j > index; j--) {
-    	    	set[j] = set[j - 1];
-    	    }
-    	    set[index] = ele;
-    	    size++;
+        if (!(contains(ele))) {
+            int i;
+            for (i = 0; i < size; i++) {
+                if (set[i] > ele) {
+                    index = i;
+                    break;
+                }
+            }
+            if (i == size) {
+                index = i;
+            }
+            for (int j = size; j > index; j--) {
+                set[j] = set[j - 1];
+            }
+            set[index] = ele;
+            size++;
         }
     }
 }
+/**
+ * Solution class.
+ */
 public final class Solution {
     /**
      * Constructs the object.
@@ -113,15 +149,12 @@ public final class Solution {
                 case "size":
                 System.out.println(s.size());
                 break;
-                // case "contains":
-                // System.out.println(s.contains(Integer.parseInt(tokens[1])));
-                // break;
                 case "print":
                 System.out.println(s);
                 break;
                 case "addAll":
                 if (tokens.length == 2) {
-                	    String[] t1 = tokens[1].split(",");
+                        String[] t1 = tokens[1].split(",");
                         int[] temp = new int[t1.length];
                         for (int i = 0; i < temp.length; i++) {
                             temp[i] = Integer.parseInt(t1[i]);
