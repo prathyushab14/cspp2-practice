@@ -44,7 +44,6 @@ class SortedSet extends Set {
     }
     @Override
     public void add(int ele) {
-    	System.out.println(ele);
     	int index = 0;
  
     	if (!(contains(ele))) {
