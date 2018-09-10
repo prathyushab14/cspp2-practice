@@ -81,10 +81,10 @@ public final class Solution {
      */
     public static int[] intArray(final String s) {
         String input = s;
-        if (input.equals("[]")) {
+        if (input.equals("{}")) {
             return new int[0];
         }
-        if (s.contains("[")) {
+        if (s.contains("{")) {
             input = s.substring(1, s.length() - 1);
         }
         return Arrays.stream(input.split(","))
