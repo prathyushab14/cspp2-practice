@@ -11,9 +11,9 @@ class SortedSet extends Set {
 		    System.out.println("Invalid Arguments to Subset Exception");
 	    }
 	    int count=0;
-	    for (int i = 0,j=0; i < size; i++,j++) {
+	    for (int i = 0,j=0; i < size; i++) {
 		    if (set[i] >= fromElement && set[i] < toElement) {
-			    arr[j]=set[i];
+			    arr[j++]=set[i];
 			    count++;
 		    }
 	    }
