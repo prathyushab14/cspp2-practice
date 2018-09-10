@@ -9,6 +9,7 @@ class SortedSet extends Set {
 	    int[] arr = new int[10];
 	    if (fromElement > toElement) {
 		    System.out.println("Invalid Arguments to Subset Exception");
+		    return null;
 	    }
 	    int count=0;
 	    for (int i = 0,j=0; i < size; i++) {
