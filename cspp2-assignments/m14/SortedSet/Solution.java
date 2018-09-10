@@ -136,11 +136,11 @@ public final class Solution {
                     int[] tmp =s.subSet(Integer.parseInt(arrstring3[0]),
                         Integer.parseInt(arrstring3[1]));
                     if (tmp != null) {
-                        System.out.println(Arrays.toString(tmp));
+                        System.out.println(Arrays.toString(tmp).replace("[","{").replace("]","}"));
                     }
                 break;
                 case "headSet":
-                    s.headSet(Integer.parseInt(tokens[1]));
+                    System.out.println(Arrays.toString(s.headSet(Integer.parseInt(tokens[1]))).replace("[","{").replace("]","}"));
                 break;
                 case "last":
                 System.out.println(s.last());
