@@ -57,8 +57,8 @@ class SortedSet extends Set {
                     }
                 } return Arrays.copyOf(arr, count);
             } else {
-            throw new InvalidArgumentstoSubsetException
-            ("Invalid Arguments to Subset Exception");
+            throw new InvalidArgumentstoSubsetException(
+                "Invalid Arguments to Subset Exception");
             }
         } catch (Exception e) {
             System.out.println("Invalid Arguments to Subset Exception");
@@ -71,7 +71,7 @@ class SortedSet extends Set {
      * @param      toElement  To element
      *
      * @return     an array
-     * @throws      SetEmptyException
+     * @throws      SetEmptyException raises if there are no elements
      */
     public int[] headSet(final int toElement) throws SetEmptyException {
         if (toElement <= get(0)) {
@@ -93,7 +93,7 @@ class SortedSet extends Set {
      * last element of set.
      *
      * @return     last element of the set
-     * @throws setemptyexception
+     * @throws setemptyexception no elements in array
      */
     public int last() throws SetEmptyException  {
         if (size() != 0) {
@@ -278,7 +278,7 @@ public final class Solution {
                         System.out.println(Arrays.toString(
                         s.headSet(Integer.parseInt(
                             tokens[1]))).replace(
-                            "[", "{").replace("]", "}")); 
+                            "[", "{").replace("]", "}"));
                     } catch (Exception e) {
                         System.out.println("Set Empty Exception");
                     }
@@ -317,8 +317,8 @@ public final class Solution {
                     s.add(intArray);
                     intArray = intArray(tokens[2]);
                     t.add(intArray);
-                    System.out.println(Arrays.deepToString
-                        (s.cartesianProduct(t)));
+                    System.out.println(Arrays.deepToString(
+                        s.cartesianProduct(t)));
                 default:
                 break;
             }
