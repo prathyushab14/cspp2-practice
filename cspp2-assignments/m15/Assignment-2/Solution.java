@@ -14,6 +14,11 @@ class InvalidArgumentstoSubsetException extends Exception {
         super(s);
     }
 }
+class SetEmptyException extends Exception {
+    SetEmptyException(final String st) {
+        super(st);
+    }
+}
 /**
  * Class for sorted set.
  */
@@ -76,12 +81,17 @@ class SortedSet extends Set {
      * @return     last element of the set
      */
     public int last() {
-        if (size != 0) {
+        try {
+            if (size != 0) {
             return set[size - 1];
-        }
+        } else {
+            throw new SetEmptyException("Set Empty Exception");
+        } 
+    } catch (Exception e) {
         System.out.println("Set Empty Exception");
         return -1;
     }
+}
     /**
      * Adds all elements of the array.
      *
