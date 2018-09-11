@@ -50,9 +50,9 @@ class SortedSet extends Set {
         try {
             if (fromElement <= toElement) {
                int count = 0;
-               for (int i = 0, j = 0; i < size; i++) {
-                   if (set[i] >= fromElement && set[i] < toElement) {
-                        arr[j++] = set[i];
+               for (int i = 0, j = 0; i < size(); i++) {
+                   if (get(i) >= fromElement && get(i) < toElement) {
+                        arr[j++] = get(i);
                         count++;
                     }
                 } return Arrays.copyOf(arr, count);
@@ -72,16 +72,16 @@ class SortedSet extends Set {
      * @return     an array
      */
     public int[] headSet(final int toElement) throws SetEmptyException {
-        if (toElement <= set[0]) {
+        if (toElement <= get(0)) {
             throw new SetEmptyException("Set Empty Exception");
         }
 
         final int ten = 10;
         int[] array = new int[ten];
         int count = 0;
-        for (int i = 0, j = 0; i < size; i++) {
-            if (set[i] < toElement) {
-                array[j++] = set[i];
+        for (int i = 0, j = 0; i < size(); i++) {
+            if (get(i) < toElement) {
+                array[j++] = get(i);
                 count++;
             }
         }
@@ -93,8 +93,8 @@ class SortedSet extends Set {
      * @return     last element of the set
      */
     public int last() throws SetEmptyException  {
-        if (size != 0) {
-            return set[size - 1];
+        if (size() != 0) {
+            return get(size() - 1);
         } else {
             throw new SetEmptyException("Set Empty Exception");
         }
@@ -120,20 +120,20 @@ class SortedSet extends Set {
         int index = 0;
         if (!(contains(ele))) {
             int i;
-            for (i = 0; i < size; i++) {
-                if (set[i] > ele) {
+            for (i = 0; i < size(); i++) {
+                if (get(i) > ele) {
                     index = i;
                     break;
                 }
             }
-            if (i == size) {
+            if (i == size()) {
                 index = i;
             }
-            for (int j = size; j > index; j--) {
-                set[j] = set[j - 1];
+            for (int j = size(); j > index; j--) {
+                setArrayElement(j,get(j - 1));
             }
-            set[index] = ele;
-            size++;
+            setArrayElement(index,ele);
+            sizeincrement();
         }
     }
     /**
@@ -145,10 +145,10 @@ class SortedSet extends Set {
      */
     public Set intersection(final Set t) {
         Set ns = new Set();
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < t.set.length; j++) {
-                if (t.set[j] == set[i]) {
-                    ns.add(set[i]);
+        for (int i = 0; i < size(); i++) {
+            for (int j = 0; j < t.getArrayLength(); j++) {
+                if (t.get(j) == get(i)) {
+                    ns.add(get(i));
                 }
             }
         }
@@ -163,10 +163,10 @@ class SortedSet extends Set {
      */
     public Set retainAll(final int[] intArray) {
         Set na = new Set();
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size(); i++) {
             for (int j = 0; j < intArray.length; j++) {
-                if (intArray[j] == set[i]) {
-                    na.add(set[i]);
+                if (intArray[j] == get(i)) {
+                    na.add(get(i));
                 }
             }
         }
@@ -180,15 +180,15 @@ class SortedSet extends Set {
      * @return    array set
      */
     public int[][] cartesianProduct(final Set t) {
-        if (size == 0 || t.size() == 0) {
+        if (size() == 0 || t.size() == 0) {
             return null;
         }
-        int[][] arr = new int[size * t.size()][2];
+        int[][] arr = new int[size() * t.size()][2];
         int k = 0;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size(); i++) {
             for (int j = 0; j < t.size(); j++) {
-                arr[k][0] = set[i];
-                arr[k++][1] = t.set[j];
+                arr[k][0] = get(i);
+                arr[k++][1] = t.get(j);
             }
         }
         return arr;

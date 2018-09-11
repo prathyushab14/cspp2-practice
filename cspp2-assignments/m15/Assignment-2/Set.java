@@ -13,12 +13,12 @@ public class Set {
     /**
      * holds the elemtns in this Set array.
      */
-    public int[] set;
+    private int[] set;
 
     /**
      * indicates the number of elememnts of this set.
      */
-    public int size;
+    private int size;
 
     /**
      * Default constructor to create an array with the szie 10.
@@ -134,6 +134,18 @@ public class Set {
         } else {
             return set[index];
         }
+    }
+
+    public void sizeincrement() {
+        this.size++;
+    }
+
+    public void setArrayElement(int index, int value) {
+        this.set[index] = value;
+    }
+
+    public int getArrayLength() {
+        return this.set.length;
     }
 
     /**
