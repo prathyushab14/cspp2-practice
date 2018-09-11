@@ -212,7 +212,7 @@ public final class Solution {
         if (input.equals("{}")) {
             return new int[0];
         }
-        if (s.contains("{")) {
+        if (s.contains("[")) {
             input = s.substring(1, s.length() - 1);
         }
         return Arrays.stream(input.split(","))
@@ -287,7 +287,7 @@ public final class Solution {
                 case "intersection":
                     s = new SortedSet();
                     SortedSet i = new SortedSet();
-                   int[] intArray  = intArray(tokens[1]);
+                    int[] intArray  = intArray(tokens[1]);
                     s.add(intArray);
                     intArray = intArray(tokens[2]);
                     i.add(intArray);
@@ -295,8 +295,7 @@ public final class Solution {
                 break;
                 case "retainAll":
                     s = new SortedSet();
-                    System.out.println(tokens[1]);
-                    intArray = intArray(tokens[1]);
+                    intArray = intArray(tokens[1].replace("[","").replace("]",""));
                     s.add(intArray);
                     intArray = intArray(tokens[2]);
                     System.out.println(s.retainAll(intArray));
