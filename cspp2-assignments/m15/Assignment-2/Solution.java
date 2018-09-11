@@ -8,13 +8,21 @@ class InvalidArgumentstoSubsetException extends Exception {
     /**
      * Constructs the object.
      *
-     * @param      s     { parameter_description }
+     * @param      s   string type
      */
     InvalidArgumentstoSubsetException(final String s) {
         super(s);
     }
 }
+/**
+ * Exception for signaling set empty errors.
+ */
 class SetEmptyException extends Exception {
+    /**
+     * Constructs the object.
+     *
+     * @param      st    string type
+     */
     SetEmptyException(final String st) {
         super(st);
     }
@@ -80,18 +88,14 @@ class SortedSet extends Set {
      *
      * @return     last element of the set
      */
-    public int last() {
-        try {
-            if (size != 0) {
+    public int last() throws SetEmptyException  {
+        if (size != 0) {
             return set[size - 1];
         } else {
             throw new SetEmptyException("Set Empty Exception");
-        } 
-    } catch (Exception e) {
-        System.out.println("Set Empty Exception");
-        return -1;
+        }
+
     }
-}
     /**
      * Adds all elements of the array.
      *
@@ -127,6 +131,63 @@ class SortedSet extends Set {
             set[index] = ele;
             size++;
         }
+    }
+    /**
+     * returns elements that are in both sets.
+     *
+     * @param      t     object of set
+     *
+     * @return   intersection set
+     */
+    public Set intersection(final Set t) {
+        Set ns = new Set();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < t.set.length; j++) {
+                if (t.set[j] == set[i]) {
+                    ns.add(set[i]);
+                }
+            }
+        }
+        return ns;
+    }
+    /**
+     * returns  elements.
+     *
+     * @param      intArray  The int array
+     *
+     * @return     returns elements that are in both sets
+     */
+    public Set retainAll(final int[] intArray) {
+        Set na = new Set();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < intArray.length; j++) {
+                if (intArray[j] == set[i]) {
+                    na.add(set[i]);
+                }
+            }
+        }
+        return na;
+    }
+    /**
+     * cartesian product.
+     *
+     * @param      t     { parameter_description }
+     *
+     * @return    array set
+     */
+    public int[][] cartesianProduct(final Set t) {
+        if (size == 0 || t.size() == 0) {
+            return null;
+        }
+        int[][] arr = new int[size * t.size()][2];
+        int k = 0;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < t.size(); j++) {
+                arr[k][0] = set[i];
+                arr[k++][1] = t.set[j];
+            }
+        }
+        return arr;
     }
 }
 /**
@@ -212,12 +273,41 @@ public final class Solution {
                         "[", "{").replace("]", "}"));
                 break;
                 case "last":
-                System.out.println(s.last());
+                    try {
+                    System.out.println(s.last());
+                }
+                catch (Exception e) {
+                    System.out.println("Set Empty Exception");
+                }
                 break;
                 case "add":
-                    String[] t = tokens[1].split(",");
+                    String[] t1 = tokens[1].split(",");
                     s.add(Integer.parseInt(tokens[1]));
                 break;
+                case "intersection":
+                    s = new SortedSet();
+                    SortedSet i = new SortedSet();
+                   int[] intArray  = intArray(tokens[1]);
+                    s.add(intArray);
+                    intArray = intArray(tokens[2]);
+                    i.add(intArray);
+                    System.out.println(s.intersection(i));
+                break;
+                case "retainAll":
+                    s = new SortedSet();
+                    intArray = intArray(tokens[1]);
+                    s.add(intArray);
+                    intArray = intArray(tokens[2]);
+                    System.out.println(s.retainAll(intArray));
+                break;
+                case "cartesianProduct":
+                    s = new SortedSet();
+                    SortedSet t = new SortedSet();
+                    intArray = intArray(tokens[1]);
+                    s.add(intArray);
+                    intArray = intArray(tokens[2]);
+                    t.add(intArray);
+                    System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
                 default:
                 break;
             }
