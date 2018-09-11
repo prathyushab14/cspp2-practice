@@ -274,7 +274,8 @@ public final class Solution {
                     try {
                         System.out.println(Arrays.toString(
                         s.headSet(Integer.parseInt(
-                            tokens[1]))));    
+                            tokens[1]))).replace(
+                            "[", "{").replace("]", "}"));    
                     } catch (Exception e) {
                         System.out.println("Set Empty Exception");
                     }
