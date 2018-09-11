@@ -295,10 +295,10 @@ public final class Solution {
                 break;
                 case "retainAll":
                     s = new SortedSet();
-                    intArray = intArray(tokens[1]);
-                    s.add(intArray);
-                    intArray = intArray(tokens[2]);
-                    System.out.println(s.retainAll(intArray));
+                    int[] intArray1 = intArray(tokens[1]);
+                    s.add(intArray1);
+                    intArray1 = intArray(tokens[2]);
+                    System.out.println(s.retainAll(intArray1));
                 break;
                 case "cartesianProduct":
                     s = new SortedSet();
