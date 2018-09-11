@@ -1,8 +1,11 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
+/**
+ * Exception for signaling invalid position errors.
+ */
 class InvalidPositionException extends Exception {
-	InvalidPositionException(String s) {
+	InvalidPositionException(final String s) {
 		super(s);
 	}
 }
@@ -164,7 +167,7 @@ public class List {
     public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
-            try{
+            try {
             	if (index >= 0 && index < size) {
                     for (int i = index; i < size - 1; i++) {
                         list[i] = list[i + 1];
@@ -174,9 +177,7 @@ public class List {
                 } else {
                throw new InvalidPositionException("Invalid Position Exception");
                 }
-            }
-
-                catch (Exception e) {
+            } catch (Exception e) {
                 	System.out.println("Invalid Position Exception");
                 }
         }
@@ -350,17 +351,16 @@ public class List {
     public List subList(final int start, final int end) {
     // write the logic for subList
             try {
-            	if (start < 0 || end < 0 || start > end || end > size || size == 0) {
-            	throw new IndexOutOfBoundsException("Index Out of Bounds Exception");
-            }
-            else {
+            	if (start < 0 || end < 0 || start > end || end > size 
+            		|| size == 0) {
+            	throw new IndexOutOfBoundsException(
+            		"Index Out of Bounds Exception");
+            } else {
             	List ls = new List(end - start);
                 for (int i = start; i < end; i++) {
                     ls.add(list[i]);
                 } return ls;
-            }
-        }
-            catch(Exception e) {
+            }} catch (Exception e) {
             	System.out.println("Index Out of Bounds Exception");
             	return null;
             }
@@ -441,7 +441,7 @@ public class List {
                     	if (tokens.length == 2) {
                         l.remove(Integer.parseInt(tokens[1]));
                         }
-                break;  
+                break;
                 case "indexOf":
                     if (tokens.length == 2) {
                         System.out.println(l.indexOf(
