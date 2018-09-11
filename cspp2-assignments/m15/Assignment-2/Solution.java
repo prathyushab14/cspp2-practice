@@ -71,7 +71,11 @@ class SortedSet extends Set {
      *
      * @return     an array
      */
-    public int[] headSet(final int toElement) {
+    public int[] headSet(final int toElement) throws SetEmptyException {
+        if (toElement <= set[0]) {
+            throw new SetEmptyException("Set Empty Exception");
+        }
+
         final int ten = 10;
         int[] array = new int[ten];
         int count = 0;
@@ -267,10 +271,14 @@ public final class Solution {
                     }
                 break;
                 case "headSet":
-                    System.out.println(Arrays.toString(
+                    try {
+                        System.out.println(Arrays.toString(
                         s.headSet(Integer.parseInt(
-                            tokens[1]))).replace(
-                        "[", "{").replace("]", "}"));
+                            tokens[1]))));    
+                    } catch (Exception e) {
+                        System.out.println("Set Empty Exception");
+                    }
+                    
                 break;
                 case "last":
                     try {
