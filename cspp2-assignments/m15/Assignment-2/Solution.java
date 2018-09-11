@@ -91,7 +91,7 @@ class SortedSet extends Set {
     }
 
      /**
-     * { function_description }
+     * last element in the array.
      *
      * @return     { description_of_the_return_value }
      *
