@@ -89,11 +89,13 @@ class SortedSet extends Set {
         }
         return Arrays.copyOf(array, count);
     }
-    /**
-     * last element of set.
+
+     /**
+     * { function_description }
      *
-     * @return     last element of the set
-     * @throws setemptyexception no elements in array
+     * @return     { description_of_the_return_value }
+     *
+     * @throws     SetEmptyException  { exception_description }
      */
     public int last() throws SetEmptyException  {
         if (size() != 0) {
