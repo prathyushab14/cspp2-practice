@@ -295,7 +295,7 @@ public final class Solution {
                 break;
                 case "retainAll":
                     s = new SortedSet();
-                    intArray = intArray(tokens[1].replace("[","").replace("]",""));
+                    intArray = intArray(tokens[1]);
                     s.add(intArray);
                     intArray = intArray(tokens[2]);
                     System.out.println(s.retainAll(intArray));
