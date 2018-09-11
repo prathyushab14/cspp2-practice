@@ -5,6 +5,11 @@ import java.util.Arrays;
  * Exception for signaling invalid position errors.
  */
 class InvalidPositionException extends Exception {
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      s     { parameter_description }
+	 */
 	InvalidPositionException(final String s) {
 		super(s);
 	}
@@ -345,7 +350,6 @@ public class List {
      *
      * @param      start  The start
      * @param      end    The end
-     *
      * @return     sublist
      */
     public List subList(final int start, final int end) {
@@ -360,7 +364,8 @@ public class List {
                 for (int i = start; i < end; i++) {
                     ls.add(list[i]);
                 } return ls;
-            }} catch (Exception e) {
+            }
+        } catch (Exception e) {
             	System.out.println("Index Out of Bounds Exception");
             	return null;
             }
