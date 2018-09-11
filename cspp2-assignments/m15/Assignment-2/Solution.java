@@ -35,21 +35,21 @@ class SortedSet extends Set {
         final int ten = 10;
         int[] arr = new int[ten];
         try {
-            if (fromElement > toElement) {
+            if (fromElement < toElement) {
+               int count = 0;
+               for (int i = 0, j = 0; i < size; i++) {
+                   if (set[i] >= fromElement && set[i] < toElement) {
+                        arr[j++] = set[i];
+                        count++;
+                    }
+                } return Arrays.copyOf(arr, count);
+            } else {
             throw new InvalidArgumentstoSubsetException("Invalid Arguments to Subset Exception");
-        } 
-    } catch (Exception e) {
-            System.out.println("Invalid Arguments to SubsetException");
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid Arguments to Subset Exception");
             return null;
         }
-        int count = 0;
-        for (int i = 0, j = 0; i < size; i++) {
-            if (set[i] >= fromElement && set[i] < toElement) {
-                arr[j++] = set[i];
-                count++;
-            }
-        }
-        return Arrays.copyOf(arr, count);
     }
     /**
      * headset array consists of elements less than the given element.
