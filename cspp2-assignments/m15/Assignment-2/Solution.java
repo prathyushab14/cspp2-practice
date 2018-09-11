@@ -57,7 +57,8 @@ class SortedSet extends Set {
                     }
                 } return Arrays.copyOf(arr, count);
             } else {
-            throw new InvalidArgumentstoSubsetException("Invalid Arguments to Subset Exception");
+            throw new InvalidArgumentstoSubsetException
+            ("Invalid Arguments to Subset Exception");
             }
         } catch (Exception e) {
             System.out.println("Invalid Arguments to Subset Exception");
@@ -70,6 +71,7 @@ class SortedSet extends Set {
      * @param      toElement  To element
      *
      * @return     an array
+     * @throws      SetEmptyException
      */
     public int[] headSet(final int toElement) throws SetEmptyException {
         if (toElement <= get(0)) {
@@ -91,6 +93,7 @@ class SortedSet extends Set {
      * last element of set.
      *
      * @return     last element of the set
+     * @throws setemptyexception
      */
     public int last() throws SetEmptyException  {
         if (size() != 0) {
@@ -130,9 +133,9 @@ class SortedSet extends Set {
                 index = i;
             }
             for (int j = size(); j > index; j--) {
-                setArrayElement(j,get(j - 1));
+                setArrayElement(j, get(j - 1));
             }
-            setArrayElement(index,ele);
+            setArrayElement(index, ele);
             sizeincrement();
         }
     }
@@ -275,17 +278,15 @@ public final class Solution {
                         System.out.println(Arrays.toString(
                         s.headSet(Integer.parseInt(
                             tokens[1]))).replace(
-                            "[", "{").replace("]", "}"));    
+                            "[", "{").replace("]", "}")); 
                     } catch (Exception e) {
                         System.out.println("Set Empty Exception");
                     }
-                    
                 break;
                 case "last":
                     try {
                     System.out.println(s.last());
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     System.out.println("Set Empty Exception");
                 }
                 break;
@@ -316,7 +317,8 @@ public final class Solution {
                     s.add(intArray);
                     intArray = intArray(tokens[2]);
                     t.add(intArray);
-                    System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
+                    System.out.println(Arrays.deepToString
+                        (s.cartesianProduct(t)));
                 default:
                 break;
             }
