@@ -1,6 +1,11 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
+class InvalidPositionException extends Exception {
+	InvalidPositionException(String s) {
+		super(s);
+	}
+}
 /**
 *class list.
 *
@@ -159,17 +164,21 @@ public class List {
     public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
-        try {
-            if (index >= 0 && index < size) {
-                for (int i = index; i < size - 1; i++) {
-                    list[i] = list[i + 1];
+            try{
+            	if (index >= 0 && index < size) {
+                    for (int i = index; i < size - 1; i++) {
+                        list[i] = list[i + 1];
+                    }
+                    list[size] = 0;
+                    size--;
+                } else {
+               throw new InvalidPositionException("Invalid Position Exception");
                 }
-                list[size] = 0;
-                size--;
-            } 
-            }catch (Exception e){
-            System.out.println("Invalid Position Exception");
             }
+
+                catch (Exception e) {
+                	System.out.println("Invalid Position Exception");
+                }
         }
 
     /*
@@ -424,10 +433,10 @@ public class List {
                     System.out.println(l);
                 break;
                 case "remove":
-                    if (tokens.length == 2) {
+                    	if (tokens.length == 2) {
                         l.remove(Integer.parseInt(tokens[1]));
-                    }
-                break;
+                        }
+                break;  
                 case "indexOf":
                     if (tokens.length == 2) {
                         System.out.println(l.indexOf(
