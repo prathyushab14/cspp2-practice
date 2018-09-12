@@ -18,6 +18,7 @@ public class BookyourShow {
 			}
 	    }
 		return null;
+
     }
 	public void bookAShow(String movieName, String datetime, Patron p, String[] bookingSeats) {
 		if (size == 0) {
@@ -26,17 +27,19 @@ public class BookyourShow {
 		}
 		int c = 0;
 		for (Show s : showList) {
-			if ((s.movieName.equals(movieName)) && (s.dateTime.equals(datetime))) {
+			if (s != null) {
+			    if ((s.movieName.equals(movieName)) && (s.dateTime.equals(datetime))) {
 				    c = 1;
-				for (String seatnum : bookingSeats) {
-					for (int i = 0; i < s.seatNums.length; i++) {
-						if (s.seatNums[i].equals(seatnum)) {
-							s.seatNums[i] = "N/A";
-							s.bookedSeats[i] = p;
-						}
-					}
-				}
-            }
+				    for (String seatnum : bookingSeats) {
+					    for (int i = 0; i < s.seatNums.length; i++) {
+						    if (s.seatNums[i].equals(seatnum)) {
+							    s.seatNums[i] = "N/A";
+							    s.bookedSeats[i] = p;
+						    }
+					    }
+				    }
+                }
+		    }
 		}
 		if (c == 0) {
 			System.out.println("No show");
