@@ -1,8 +1,8 @@
 class Patron {
 	String name;
-	String mobileNo;
-	Patron(String name, String mobileNo) {
+	String mobileNumber;
+	Patron(String name, String mobileNumber) {
 		this.name = name;
-		this.mobileNo = mobileNo;
+		this.mobileNumber = mobileNumber;
 	}
 }

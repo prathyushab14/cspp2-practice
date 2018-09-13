@@ -1,35 +1,35 @@
 public class BookyourShow {
-	public Show[] showList;
+	public Show[] showsArray;
 	public int size;
 	BookyourShow() {
-		showList = new Show[10];
+		showsArray = new Show[10];
 		size = 0;
 	}
-	public int size() {
-		return size;
-	}
 	public void addAShow(Show var) {
-		showList[size++] = var;
+		showsArray[size++] = var;
     }
-	public Show getAShow(String moviename, String datetime) {
-		for (Show s : showList) {
-			if ((s.movieName.equals(moviename)) && (s.dateTime.equals(datetime))) {
+	public Show getAShow(String moviename, String dattime) {
+		for (Show s : showsArray) {
+			if (s != null) {
+				if (s.movieName.equals(moviename) && s.dateTime.equals(dattime)) {
 					return s;
+				}
 			}
 	    }
 		return null;
-
     }
-	public void bookAShow(String movieName, String datetime, Patron p, String[] bookingSeats) {
+	public void bookAShow(String moviename, String dattime, Patron p, String[] bookingSeats) {
 		if (size == 0) {
 			System.out.println("No show");
 			return;
 		}
-		int c = 0;
-		for (Show s : showList) {
+		if (getAShow(moviename,dattime) == null) {
+			System.out.println("No show");
+			return;
+		}
+		for (Show s : showsArray) {
 			if (s != null) {
-			    if ((s.movieName.equals(movieName)) && (s.dateTime.equals(datetime))) {
-				    c = 1;
+			    if (s.movieName.equals(moviename) && s.dateTime.equals(dattime)) {
 				    for (String seatnum : bookingSeats) {
 					    for (int i = 0; i < s.seatNums.length; i++) {
 						    if (s.seatNums[i].equals(seatnum)) {
@@ -41,31 +41,30 @@ public class BookyourShow {
                 }
 		    }
 		}
-		if (c == 0) {
-			System.out.println("No show");
-		}
 	}
-	public void printTicket(String movieName,String datetime,String mobileNo) {
-		boolean b = false;
-		for (Show s : showList) {
+	public void printTicket(String moviename,String dattime,String mobileNum) {
+		boolean booked = false;
+		for (Show s : showsArray) {
 			if (s != null) {
-				if (s.movieName.equals(movieName) && s.dateTime.equals(datetime)) {
+				if (s.movieName.equals(moviename) && s.dateTime.equals(dattime)) {
 					for (int i = 0;i < s.bookedSeats.length; i++) {
-						if (s.bookedSeats[i].mobileNo.equals(mobileNo)) {
-							b = true;
+						if (s.bookedSeats != null) {
+						    if (s.bookedSeats[i].mobileNumber.equals(mobileNum)) {
+							    booked = true;
+							}
 						}
 					}
 				}
 			}
 		}
-		if (b) {
-			System.out.println(mobileNo+" "+movieName+" "+datetime);
+		if (booked) {
+			System.out.println(mobileNum+" "+moviename+" "+dattime);
 		} else {
 			System.out.println("Invalid");
 		}
     }
 	public void showAll() {
-		for (Show s : showList)
+		for (Show s : showsArray)
 		if (s!= null) {
 			String res = s.movieName+",";
 			res += s.dateTime+",[";
