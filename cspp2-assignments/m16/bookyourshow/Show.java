@@ -1,15 +1,30 @@
+/**
+ * Class for show.
+ */
 public class Show {
-	String movieName;
-	String dateTime;
-	String[] seatNums;
-	Patron[] bookedSeats;
-	Show(String name, String dateTime, String[] seats) {
-		this.movieName = name;
-		this.dateTime = dateTime;
-	    this.seatNums = seats;
-	    this.bookedSeats = new Patron[seats.length];
+	String moviename;
+	String dateandTime;
+	String[] seats;
+	Patron[] booked;
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      argmoviename    The argmoviename
+	 * @param      argdateandTime  The argdateand time
+	 * @param      argseats        The argseats
+	 */
+	Show(final String argmoviename, final String argdateandTime, final String[] argseats) {
+		moviename = argmoviename;
+		dateandTime = argdateandTime;
+		seats = argseats;
+		booked = new Patron[argseats.length];
 	}
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
-		return movieName+","+dateTime;
+		return moviename + "," + dateandTime;
 	}
 }
