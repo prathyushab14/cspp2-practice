@@ -56,11 +56,11 @@ public class BookyourShow {
 					}
 				}
 			}
-		    if (booked) {
-			    System.out.println(mobileNum+" "+moviename+" "+dattime);
-		    } else {
-			    System.out.println("Invalid");
-		    }
+		}
+		if (booked) {
+			System.out.println(mobileNum+" "+moviename+" "+dattime);
+		} else {
+			System.out.println("Invalid");
 		}
     } 
 	public void showAll() {
