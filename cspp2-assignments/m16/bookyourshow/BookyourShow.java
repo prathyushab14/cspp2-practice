@@ -14,24 +14,24 @@ public class BookyourShow {
     /**
      * Adds a show.
      *
-     * @param      obj   The object
+     * @param      sh   The object
      */
-    public void addAShow(final Show obj) {
-        showslist[size] = obj;
+    public void addAShow(final Show sh) {
+        showslist[size] = sh;
         size++;
     }
     /**
      * Gets a show.
      *
-     * @param      argmoviename  The argmoviename
-     * @param      argdatetime   The argdatetime
+     * @param      moviename  The moviename
+     * @param      datetime   The datetime
      *
      * @return     A show.
      */
-    public Show getAShow(final String argmoviename, final String argdatetime) {
+    public Show getAShow(final String moviename, final String datetime) {
         for (int i = 0; i < size; i++) {
             if (showslist[i] != null) {
-                if (showslist[i].moviename.equals(argmoviename) && showslist[i].dateandTime.equals(argdatetime)) {
+                if (showslist[i].moviename.equals(moviename) && showslist[i].dateandTime.equals(datetime)) {
                     return showslist[i];
                 }
             }
@@ -41,23 +41,23 @@ public class BookyourShow {
     /**
      * { function_description }
      *
-     * @param      argmoviename  The argmoviename
-     * @param      argdatetime   The argdatetime
+     * @param      moviename  The argmoviename
+     * @param      datetime   The argdatetime
      * @param      obj           The object
-     * @param      argseats      The argseats
+     * @param      seats      The argseats
      */
-    public void bookAShow(String argmoviename, String argdatetime, Patron obj, String[] argseats) {
+    public void bookAShow(String moviename, String datetime, Patron obj, String[] seats) {
         if (size == 0) {
             System.out.println("No show");
             return;
         }
-        if (getAShow(argmoviename, argdatetime) == null) {
+        if (getAShow(moviename, datetime) == null) {
             System.out.println("No show");
         }
         for (int i = 0; i < size; i++) {
             if (showslist[i] != null) {
-                if (showslist[i].moviename.equals(argmoviename) && showslist[i].dateandTime.equals(argdatetime)) {
-                    for (String seatnum : argseats) {
+                if (showslist[i].moviename.equals(moviename) && showslist[i].dateandTime.equals(datetime)) {
+                    for (String seatnum : seats) {
                         for (int j = 0; j < showslist[i].seats.length; j++) {
                             if (showslist[i].seats[j].equals(seatnum)) {
                                 showslist[i].seats[j] = "N/A";
@@ -71,15 +71,15 @@ public class BookyourShow {
     }
     /**
      *
-     * @param      argmoviename  The argmoviename
-     * @param      argdatetime   The argdatetime
+     * @param      moviename  The moviename
+     * @param      datetime   The datetime
      * @param      mobilenum     The mobilenum
      */
-    public void printTicket(String argmoviename, String argdatetime, String mobilenum) {
+    public void printTicket(String moviename, String datetime, String mobilenum) {
         boolean res = false;
         for (int i = 0; i < size; i++) {
             if (showslist[i] != null) {
-                if (showslist[i].moviename.equals(argmoviename) && showslist[i].dateandTime.equals(argdatetime)) {
+                if (showslist[i].moviename.equals(moviename) && showslist[i].dateandTime.equals(datetime)) {
                     for (int j = 0; j < showslist[i].booked.length; j++) {
                         if (showslist[i].booked[j] != null) {
                             if (showslist[i].booked[j].mobile.equals(mobilenum)) {
@@ -92,7 +92,7 @@ public class BookyourShow {
             }
         }
         if (res) {
-            System.out.println(mobilenum + " " + argmoviename + " " + argdatetime);
+            System.out.println(mobilenum + " " + moviename + " " + datetime);
         } else {
             System.out.println("Invalid");
         }
