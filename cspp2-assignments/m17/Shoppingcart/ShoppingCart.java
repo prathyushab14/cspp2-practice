@@ -98,13 +98,12 @@ class ShoppingCart {
     		return;
     	}
     	if (couponApplied) {
-    		System.out.println("Invalid coupon");
     		return;
     	}
     	for (String s : validCoupons) {
     		if (s.equals(cou)) {
     			int num = Integer.parseInt(cou.substring(3));
-    			discount = getTotalAmount() * num / 100;
+    			discount = getTotalAmount()/100 * num;
     			couponApplied = true;
     		}
     	}
