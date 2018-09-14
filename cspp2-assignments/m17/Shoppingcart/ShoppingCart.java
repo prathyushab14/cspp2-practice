@@ -16,8 +16,10 @@ class ShoppingCart {
     	catalog[catalogSize++] = item;
     }
     public void addToCart(Item item) {
-    	if (checkCatalog(item)) {
-    	    cart[cartSize++] = item;
+    	if (!inCart(item)) {
+    	    if (checkCatalog(item)) {
+    	        cart[cartSize++] = item;
+            }
         }
     }
     boolean inCart(Item item) {
