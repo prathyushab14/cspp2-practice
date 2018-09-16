@@ -4,7 +4,7 @@ class ShoppingCart{
 	int cartSize;
 	int catalogSize;
 	String[] validCoupons ={"IND10","IND20","IND30","IND50"};
-	static double discount =0.0;
+	static double discount = 0.0;
 	static boolean couponApplied = false;
 
 	ShoppingCart(){
