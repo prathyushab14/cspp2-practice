@@ -208,15 +208,16 @@ class Quiz {
             s += questions[i].getQuestionText();
             s += "\n";
             if (questions[i].evaluateResponse(questions[i].getResponse())) {
-                s += " Correct Answer! - Marks Awarded: " + 
-                questions[i].getMaxMarks() + "\n";
+                s += " Correct Answer! - Marks Awarded: "
+                + questions[i].getMaxMarks() + "\n";
                 sum += questions[i].getMaxMarks();
             } else {
-                s += " Wrong Answer! - Penalty: "+questions[i].getPenalty() + "\n";
+                s += " Wrong Answer! - Penalty: " +
+                questions[i].getPenalty() + "\n";
                 sum += questions[i].getPenalty();
             }
         }
-        s += "Total Score: "+sum;
+        s += "Total Score: " + sum;
         return s;
     }
 
@@ -231,6 +232,9 @@ public final class Solution {
     private Solution() {
         // leave this blank
     }
+    /**
+     * { var_description }
+     */
     private static boolean flag = true;
     /**
      * main function to execute test cases.
@@ -316,13 +320,14 @@ public final class Solution {
             }
             String[] choi = toke[one].split(",");
             if (choi.length < two) {
-                System.out.println(toke[0] + " does not have enough answer choices");
+                System.out.println(toke[0] + " does not" +
+                    "have enough answer choices");
                 flag = false;
                 return;
             }
             if (Integer.parseInt(toke[two]) > four) {
-                System.out.println("Error! Correct answer choice" 
-                    + " number is out of range for " + 
+                System.out.println("Error! Correct answer choice" +
+                    " number is out of range for " +
                     toke[0]);
                 flag = false;
                 return;
