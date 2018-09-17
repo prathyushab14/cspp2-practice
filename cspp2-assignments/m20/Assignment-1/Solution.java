@@ -126,10 +126,6 @@ class Question {
      *
      * @return     String representation of the object.
      */
-    public String toString() {
-        String s = "";
-        return s;
-    }
 }
 /**
  * Class for quiz.
@@ -151,7 +147,7 @@ class Quiz {
      * Constructs the object.
      */
     Quiz() {
-    	questions = new Question[5];
+    	questions = new Question[10];
     	size = 0;
     }
     /**
@@ -161,9 +157,6 @@ class Quiz {
      */
     public void addQuestion(final Question q) {
     	questions[size++] = q;
-    }
-    public void addChoices(final String[] cho) {
-
     }
     /**
      * Gets the question.
@@ -182,6 +175,16 @@ class Quiz {
      */
     public String showReport() {
         String s = "";
+        return s;
+    }
+    public String toString(int i) {
+        String s = "";
+        s += questions[i].getQuestionText()+"("+questions[i].getMaxMarks()+")";
+        s += "\n";
+        for (int j = 0; j < questions[i].getChoice().length - 1; j++) {
+        	s += questions[i].getChoice()[j]+"	";
+        }
+        s += questions[i].getChoice()[3];
         return s;
     }
 
@@ -278,6 +281,8 @@ public final class Solution {
             	System.out.println("Error! Correct answer choice number is out of range for " +toke[0]);
             	return;
             }
+            Question qu = new Question(toke[0], choi, Integer.parseInt(toke[2]), Integer.parseInt(toke[3]), Integer.parseInt(toke[4]));
+            quiz.addQuestion(qu);
         }
         System.out.println(q+ " are added to the quiz");
     }
@@ -293,15 +298,14 @@ public final class Solution {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
-        // for (int i = 0; i < q; i++) {
-        // 	System.out.println(questiontext+"("+maxMarks+")");
-        // 	System.out.println("\n");
-        // 	System.out.println(choices);
-        // }
-        // for (int i = 0; i < q; i++) {
-        // 	String ans = scan.nextLine();
-        // 	quiz.setResponse(ans);
-        // }
+        for (int i = 0; i < q - 1; i++) {
+        	System.out.println(quiz.toString(i));
+        	// String ans = scan.nextLine();
+        	// quiz.setResponse(ans);
+        }
+        System.out.println(quiz.toString(q - 1));
+        // String ans = scan.nextLine();
+        // quiz.setResponse(ans);
     }
     /**
      * Displays the score report.
