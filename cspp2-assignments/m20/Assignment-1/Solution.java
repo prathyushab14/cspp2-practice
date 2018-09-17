@@ -59,7 +59,7 @@ class Question {
      * @return     { description_of_the_return_value }
      */
     public boolean evaluateResponse(final String choice) {
-    	if (choice.equals(correctAnswer)) {
+    	if (choice.equals(getCorrectAnswer())) {
     		return true;
     	}
         return false;
@@ -70,7 +70,7 @@ class Question {
      * @return     The correct answer.
      */
     public String getCorrectAnswer() {
-    	return Integer.toString(correctAnswer);
+    	return choices[correctAnswer - 1];
     }
     /**
      * Gets the question text.
@@ -199,7 +199,7 @@ class Quiz {
         	s += ("Correct Answer! - Marks Awarded: "+questions[i].getMaxMarks());
         	sum += questions[i].getMaxMarks();
         } else {
-        	s += "Wrong ANswer! - Penalty: "+questions[i].getPenalty() + "\n";
+        	s += "Wrong Answer! - Penalty: "+questions[i].getPenalty() + "\n";
         	sum += questions[i].getPenalty();
         }
         s += "Total Score: "+sum;
