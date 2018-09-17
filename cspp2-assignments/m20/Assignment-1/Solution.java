@@ -324,9 +324,9 @@ public final class Solution {
         }
         for (int i = 0; i < q; i++) {
         	Question que = quiz.getQuestion(i);
-        	System.out.println(quiz.toString(i));
-        	 String ans = scan.nextLine();
-        	 que.setResponse(ans);
+            System.out.println(que);
+        	String ans = scan.nextLine();
+        	que.setResponse(ans);
         }
 
     }
