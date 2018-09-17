@@ -162,6 +162,9 @@ class Quiz {
     public void addQuestion(final Question q) {
     	questions[size++] = q;
     }
+    public void addChoices(final String[] cho) {
+
+    }
     /**
      * Gets the question.
      *
@@ -253,15 +256,12 @@ public final class Solution {
         for (int i = 0; i < q; i++) {
             String ques = scan.nextLine();
             String[] toke = ques.split(":");
-            if (toke[0] == " " || toke[1] == " " || toke[2] == " " || toke[3] == " " || toke[4] == " ") {
+            if (toke[0] == " ") {
         	    System.out.println("Error! Malformed question");
         	    return;
             }
-            // Quiz.addQuestion(toke[0]);
-            // String choi = toke[2].split(",");
-            // Quiz.add
+            String[] choi = toke[1].split(",");
         }
-
     }
     /**
      * Starts a quiz.
