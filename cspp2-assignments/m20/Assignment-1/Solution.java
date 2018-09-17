@@ -252,6 +252,7 @@ public final class Solution {
         // add the question objects to the quiz class
         if (q < 1) {
         	System.out.println("Quiz does not have questions");
+        	return;
         }
         for (int i = 0; i < q; i++) {
             String ques = scan.nextLine();
