@@ -196,7 +196,7 @@ class Quiz {
         s += questions[i].getQuestionText();
         s += "\n";
         if (questions[i].evaluateResponse(questions[i].getResponse())) {
-        	s += ("Correct Answer! - Marks Awarded: "+questions[i].getMaxMarks());
+        	s += ("Correct Answer! - Marks Awarded: "+questions[i].getMaxMarks()) + "\n";
         	sum += questions[i].getMaxMarks();
         } else {
         	s += "Wrong Answer! - Penalty: "+questions[i].getPenalty() + "\n";
