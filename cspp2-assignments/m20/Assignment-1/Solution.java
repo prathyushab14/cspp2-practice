@@ -256,7 +256,7 @@ public final class Solution {
         for (int i = 0; i < q; i++) {
             String ques = scan.nextLine();
             String[] toke = ques.split(":");
-            if (toke[0] == "") {
+            if (toke[0].equals("")) {
         	    System.out.println("Error! Malformed question");
         	    return;
             }
@@ -275,6 +275,15 @@ public final class Solution {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
+        // for (int i = 0; i < q; i++) {
+        // 	System.out.println(questiontext+"("+maxMarks+")");
+        // 	System.out.println("\n");
+        // 	System.out.println(choices);
+        // }
+        // for (int i = 0; i < q; i++) {
+        // 	String ans = scan.nextLine();
+        // 	quiz.setResponse(ans);
+        // }
     }
     /**
      * Displays the score report.
