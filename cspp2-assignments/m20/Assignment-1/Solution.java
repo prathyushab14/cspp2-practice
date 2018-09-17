@@ -121,6 +121,20 @@ class Question {
     public String getResponse() {
         return response;
     }
+    public String toString() {
+        String s = "";
+        s += getQuestionText()+"("+getMaxMarks()+")";
+        s += "\n";
+        for (int i = 0; i < choices.length; i++) {
+        	if (i != choices.length - 1) {
+        	    s += choices[i] + "\t";
+        	} else {
+        		s += choices[i];
+        }
+    }
+        s += "\n";
+        return s;
+}
     /**
      * Returns a string representation of the object.
      *
@@ -189,16 +203,6 @@ class Quiz {
         	sum += questions[i].getPenalty();
         }
         s += "Total Score: "+sum;
-        return s;
-    }
-    public String toString(int i) {
-        String s = "";
-        s += questions[i].getQuestionText()+"("+questions[i].getMaxMarks()+")";
-        s += "\n";
-        for (int j = 0; j < questions[i].getChoice().length - 1; j++) {
-        	s += questions[i].getChoice()[j]+"	";
-        }
-        s += questions[i].getChoice()[3];
         return s;
     }
 
