@@ -190,17 +190,19 @@ class Quiz {
      *
      * @return     { description_of_the_return_value }
      */
-    public String showReport(int i) {
+    public String showReport() {
     	int sum = 0;
         String s = "";
-        s += questions[i].getQuestionText();
-        s += "\n";
-        if (questions[i].evaluateResponse(questions[i].getResponse())) {
-        	s += ("Correct Answer! - Marks Awarded: "+questions[i].getMaxMarks()) + "\n";
-        	sum += questions[i].getMaxMarks();
-        } else {
-        	s += "Wrong Answer! - Penalty: "+questions[i].getPenalty() + "\n";
-        	sum += questions[i].getPenalty();
+        for (int i = 0; i < getSize(); i++) {
+            s += questions[i].getQuestionText();
+            s += "\n";
+            if (questions[i].evaluateResponse(questions[i].getResponse())) {
+        	    s += " Correct Answer! - Marks Awarded: "+questions[i].getMaxMarks() + "\n";
+        	    sum += questions[i].getMaxMarks();
+            } else {
+        	    s += " Wrong Answer! - Penalty: "+questions[i].getPenalty() + "\n";
+        	    sum += questions[i].getPenalty();
+            }
         }
         s += "Total Score: "+sum;
         return s;
@@ -344,8 +346,6 @@ public final class Solution {
         if (!flag) {
         	return;
         }
-        for (int i = 0; i < quiz.getSize() ; i++) {
-            System.out.println(quiz.showReport(i));
-        }
+        System.out.println(quiz.showReport());
     }
 }
