@@ -150,6 +150,9 @@ class Quiz {
     	questions = new Question[10];
     	size = 0;
     }
+    public int getSize() {
+    	return size;
+    }
     /**
      * Adds a question.
      *
@@ -173,8 +176,9 @@ class Quiz {
      *
      * @return     { description_of_the_return_value }
      */
-    public String showReport() {
+    public String showReport(int i) {
         String s = "";
+        s += questions[i].getQuestionText();
         return s;
     }
     public String toString(int i) {
@@ -314,5 +318,8 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report using quiz object.
+        for (int i = 0; i < quiz.getSize() ; i++) {
+            System.out.println(quiz.showReport(i));
+        }
     }
 }
