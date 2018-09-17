@@ -264,6 +264,10 @@ public final class Solution {
         		System.out.println("Invalid penalty for "+toke[0]);
         		return;
             }
+            if (Integer.parseInt(toke[3]) < 0) {
+            	System.out.println("Invalid max marks for "+toke[0]);
+            	return;
+            }
             String[] choi = toke[1].split(",");
         }
     }
