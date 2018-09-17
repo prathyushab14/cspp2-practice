@@ -277,8 +277,8 @@ public final class Solution {
             	System.out.println("Error! Correct answer choice number is out of range for " +toke[0]);
             	return;
             }
-            // System.out.println(q+ " are added to the quiz");
         }
+        System.out.println(q+ " are added to the quiz");
     }
     /**
      * Starts a quiz.
