@@ -212,7 +212,7 @@ class Quiz {
                 + questions[i].getMaxMarks() + "\n";
                 sum += questions[i].getMaxMarks();
             } else {
-                s += " Wrong Answer! - Penalty: " 
+                s += " Wrong Answer! - Penalty: "
                 + questions[i].getPenalty() + "\n";
                 sum += questions[i].getPenalty();
             }
@@ -320,13 +320,13 @@ public final class Solution {
             }
             String[] choi = toke[one].split(",");
             if (choi.length < two) {
-                System.out.println(toke[0] + " does not " 
+                System.out.println(toke[0] + " does not "
                     + "have enough answer choices");
                 flag = false;
                 return;
             }
             if (Integer.parseInt(toke[two]) > four) {
-                System.out.println("Error! Correct answer choice" 
+                System.out.println("Error! Correct answer choice"
                     + " number is out of range for " + toke[0]);
                 flag = false;
                 return;
