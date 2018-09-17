@@ -256,7 +256,7 @@ public final class Solution {
         for (int i = 0; i < q; i++) {
             String ques = scan.nextLine();
             String[] toke = ques.split(":");
-            if (toke[0].equals("") || toke[4].equals("")) {
+            if (toke[0].equals("") || toke.length < 4) {
         	    System.out.println("Error! Malformed question");
         	    return;
         	}
