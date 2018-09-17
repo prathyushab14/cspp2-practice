@@ -213,6 +213,7 @@ public final class Solution {
     private Solution() {
         // leave this blank
     }
+    private static boolean flag = true;
     /**
      * main function to execute test cases.
      *
@@ -269,6 +270,7 @@ public final class Solution {
         // add the question objects to the quiz class
         if (q < 1) {
         	System.out.println("Quiz does not have questions");
+        	flag = false;
         	return;
         }
         for (int i = 0; i < q; i++) {
@@ -276,23 +278,28 @@ public final class Solution {
             String[] toke = ques.split(":");
             if (toke[0].equals("") || toke.length < 5) {
         	    System.out.println("Error! Malformed question");
+        	    flag = false;
         	    return;
         	}
         	if (Integer.parseInt(toke[4]) > 0) {
         		System.out.println("Invalid penalty for "+toke[0]);
+        		flag = false;
         		return;
             }
             if (Integer.parseInt(toke[3]) < 0) {
             	System.out.println("Invalid max marks for "+toke[0]);
+            	flag = false;
             	return;
             }
             String[] choi = toke[1].split(",");
             if (choi.length < 2) {
             	System.out.println(toke[0]+" does not have enough answer choices");
+            	flag = false;
             	return;
             }
             if (Integer.parseInt(toke[2]) > 4) {
             	System.out.println("Error! Correct answer choice number is out of range for " +toke[0]);
+            	flag = false;
             	return;
             }
             Question qu = new Question(toke[0], choi, Integer.parseInt(toke[2]), Integer.parseInt(toke[3]), Integer.parseInt(toke[4]));
@@ -312,14 +319,16 @@ public final class Solution {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
-        for (int i = 0; i < q - 1; i++) {
-        	System.out.println(quiz.toString(i));
-        	// String ans = scan.nextLine();
-        	// quiz.setResponse(ans);
+        if (!flag) {
+        	return;
         }
-        System.out.println(quiz.toString(q - 1));
-        // String ans = scan.nextLine();
-        // quiz.setResponse(ans);
+        for (int i = 0; i < q; i++) {
+        	Question que = quiz.getQuestion(i);
+        	System.out.println(quiz.toString(i));
+        	 String ans = scan.nextLine();
+        	 que.setResponse(ans);
+        }
+
     }
     /**
      * Displays the score report.
@@ -328,6 +337,9 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report using quiz object.
+        if (!flag) {
+        	return;
+        }
         for (int i = 0; i < quiz.getSize() ; i++) {
             System.out.println(quiz.showReport(i));
         }
