@@ -177,8 +177,18 @@ class Quiz {
      * @return     { description_of_the_return_value }
      */
     public String showReport(int i) {
+    	int sum = 0;
         String s = "";
         s += questions[i].getQuestionText();
+        s += "\n";
+        if (questions[i].evaluateResponse(questions[i].getResponse())) {
+        	s += ("Correct Answer! - Marks Awarded: "+questions[i].getMaxMarks());
+        	sum += questions[i].getMaxMarks();
+        } else {
+        	s += "Wrong ANswer! - Penalty: "+questions[i].getPenalty() + "\n";
+        	sum += questions[i].getPenalty();
+        }
+        s += "Total Score: "+sum;
         return s;
     }
     public String toString(int i) {
