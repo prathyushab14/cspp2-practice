@@ -269,6 +269,10 @@ public final class Solution {
             	return;
             }
             String[] choi = toke[1].split(",");
+            if (choi.length < 2) {
+            	System.out.println(toke[0]+" does not have enough answer choices");
+            	return;
+            }
         }
     }
     /**
