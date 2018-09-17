@@ -305,28 +305,30 @@ public final class Solution {
                 return;
             }
             if (Integer.parseInt(toke[four]) > 0) {
-                System.out.println("Invalid penalty for "+toke[0]);
+                System.out.println("Invalid penalty for " + toke[0]);
                 flag = false;
                 return;
             }
             if (Integer.parseInt(toke[three]) < 0) {
-                System.out.println("Invalid max marks for "+toke[0]);
+                System.out.println("Invalid max marks for " + toke[0]);
                 flag = false;
                 return;
             }
             String[] choi = toke[one].split(",");
             if (choi.length < two) {
-                System.out.println(toke[0]+" does not have enough answer choices");
+                System.out.println(toke[0] + " does not have enough answer choices");
                 flag = false;
                 return;
             }
             if (Integer.parseInt(toke[two]) > four) {
-                System.out.println("Error! Correct answer choice number is out of range for " + 
+                System.out.println("Error! Correct answer choice" 
+                    + " number is out of range for " + 
                     toke[0]);
                 flag = false;
                 return;
             }
-            Question qu = new Question(toke[0], choi, Integer.parseInt(toke[two]), 
+            Question qu = new Question(toke[0], choi,
+                Integer.parseInt(toke[two]),
                 Integer.parseInt(toke[three]), Integer.parseInt(toke[four]));
             quiz.addQuestion(qu);
         }
