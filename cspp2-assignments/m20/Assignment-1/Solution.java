@@ -256,9 +256,13 @@ public final class Solution {
         for (int i = 0; i < q; i++) {
             String ques = scan.nextLine();
             String[] toke = ques.split(":");
-            if (toke[0].equals("") || toke[1].equals("") || toke[2].equals("") || toke[3].equals("") || toke[4].equals("")) {
+            if (toke[0].equals("")) {
         	    System.out.println("Error! Malformed question");
         	    return;
+        	}
+        	if (Integer.parseInt(toke[4]) > 0) {
+        		System.out.println("Invalid penalty for "+toke[0]);
+        		return;
             }
             String[] choi = toke[1].split(",");
         }
