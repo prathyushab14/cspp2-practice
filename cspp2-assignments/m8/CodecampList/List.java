@@ -129,6 +129,24 @@ public class List {
         }
         return -1;
     }
+    public void add(int item, int index) {
+        if (index >= 0 && index < size) {
+            size = size + 1;
+            for (int i = size; i > index; i--){
+                list[i] = list[i - 1];
+            }
+            list[index] = item;
+        }
+    }
+    public int count(int item){
+        int c = 0;
+        for (int i : list) {
+            if (list[i] == item) {
+                c++;
+            }
+        }
+        return c;
+    }
     /**
      * main function.
      *

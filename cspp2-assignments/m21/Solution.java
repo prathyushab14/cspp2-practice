@@ -198,7 +198,9 @@ class Summary {
     	}
     }
     public void show(String date) {
+    	System.out.println("hiiii");
     	for (int i = 0; i < fsize; i++) {
+    		System.out.println();
     		if (food[i].getDate().equals(date)) {
     			System.out.println("Food");
     			System.out.println("Date:" + food[i].getDate());
@@ -291,7 +293,11 @@ class Solution {
 				case "Sleeplog":
 				summ.printSL();
 				case "Summary":
-				summ.show(formatter2.format(date));
+				    if (input.length > 1) { 
+				        summ.show(formatter2.format(date));
+				    } else {
+				    	summ.show(input[1]);
+				    }
 				break;
 				default:
 				break;

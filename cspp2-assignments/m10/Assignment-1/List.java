@@ -304,7 +304,12 @@ public class List {
     public boolean contains(final int item) {
         return indexOf(item) == -1;
     }
-    /*
+    /*        for (int i = 0; i < size; i++) {
+            if (item == list[i]) {
+                return i;
+            }
+        }
+        return -1;
      * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
