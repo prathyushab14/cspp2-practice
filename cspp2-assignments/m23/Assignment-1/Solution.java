@@ -69,7 +69,7 @@ class Solution {
 				    String[] fl = l.toLowerCase().split(" ");
 				    bg.addWords(fl);
 
-				    Scanner sc = new Scanner(f[i]);
+				    Scanner sc = new Scanner(f[j]);
 				    String li = sc.nextLine().replaceAll("[^A-Za-z0-9]","");
 				    String[] sl = li.toLowerCase().split(" ");
 				    bg.addWord(sl);
