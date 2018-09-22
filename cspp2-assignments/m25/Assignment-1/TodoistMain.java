@@ -27,6 +27,14 @@ class Task {
     	String i = "";
     	String u = "";
     	try {
+    		if (time < 0) {
+    			throw new Exception("Invalid timetoComplete"+" "+time);
+    		}
+    	}
+    		 catch(Exception e) {
+    			return (e.getMessage());
+    		}
+    	try {
         	if (status.equals("todo") || status.equals("done")) {
         		if (imp) {
     		        i = "Important";
