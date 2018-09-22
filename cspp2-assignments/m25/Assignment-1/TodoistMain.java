@@ -26,20 +26,29 @@ class Task {
     	String s = "";
     	String i = "";
     	String u = "";
-    	if (imp) {
-    		i = "Important";
-        } else {
-        	i = "Not Important";
-        }
-        if (urg) {
-        	u = "Urgent";
-        } else {
-        	u = "Not Urgent";
-        }
-    	s += title+", "+name+", "+time+", "+i+", "+u+", "+status;
-    	return s;
+    	try {
+        	if (status.equals("todo") || status.equals("done")) {
+        		if (imp) {
+    		        i = "Important";
+                } else {
+        	        i = "Not Important";
+                }
+                if (urg) {
+        	        u = "Urgent";
+                } else {
+        	       u = "Not Urgent";
+                } 
+                s += title+", "+name+", "+time+", "+i+", "+u+", "+status;
+    	        return s;
+            } else {
+            	throw new Exception ("Invalid status"+" "+status);
+            }
+            } catch (Exception e) {
+        	return (e.getMessage());
+        } 
     }
 }
+
 
 /**
  * Class for todoist main.
@@ -125,8 +134,8 @@ public class TodoistMain {
         boolean important = tokens[4].equals("y");
         boolean urgent = tokens[5].equals("y");
         String status = tokens[6];
-        return new Task(
-            title, assignedTo, timeToComplete, important, urgent, status);
+            return new Task(
+                title, assignedTo, timeToComplete, important, urgent, status);
     }
 
     /**
