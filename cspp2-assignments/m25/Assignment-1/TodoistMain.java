@@ -137,7 +137,7 @@ class Todoist {
 	}
 	public Task[] getNextTask(String name, int n) {
 		Task[] t = new Task[n];
-		for (int i = 0; i < size;i++) {
+		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < t.length; j++) {
 		 	if (tasks[i].getName().equals(name)) {
 				if (tasks[i].getStatus().equals("todo")) {
@@ -147,7 +147,7 @@ class Todoist {
 							}
 						}
 					}
-				}
+				}i++;
 			}return t;
 		}return null;
 	}
