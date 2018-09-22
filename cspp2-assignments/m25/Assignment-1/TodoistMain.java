@@ -143,13 +143,12 @@ class Todoist {
 				if (tasks[i].getStatus().equals("todo")) {
 					if (tasks[i].getImp().equals("Important")) {
 						if (tasks[i].getUrg().equals("Not Urgent")) {
-							m = tasks[i];
 							for (int j = 0; j < t.length; j++) {
-								t[j] = m;
+								t[j] = tasks[i];
 							}
 						}
 					}
-				}i++;
+				}
 			}return t;
 		}return null;
 	}
