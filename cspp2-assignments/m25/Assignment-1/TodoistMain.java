@@ -63,6 +63,17 @@ class Task {
         } 
     }
 }
+class Todoist {
+	Task[] tasks;
+	int size;
+	Todoist() {
+		tasks = new Task[20];
+		size = 0;
+	}
+	public void addTask(Task t) {
+		tasks[size++] = t;
+	}
+}
 
 /**
  * Class for todoist main.
@@ -73,7 +84,7 @@ public class TodoistMain {
      * Starts a test.
      */
     public static void startTest() {
-        // Todoist todo = new Todoist();
+        Todoist todo = new Todoist();
         Task t = new Task();
         Scanner s = new Scanner(System.in);
         while (s.hasNext()) {
@@ -82,9 +93,9 @@ public class TodoistMain {
                 case "task":
                     testTask(tokens);
                 break;
-                // case "add-task":
-                //     testAddTask(todo, tokens);
-                // break;
+                case "add-task":
+                    testAddTask(todo, tokens);
+                break;
                 // case "print-todoist":
                 //     System.out.println(todo);
                 // break;
@@ -111,14 +122,13 @@ public class TodoistMain {
      * @param      todo    The todo
      * @param      tokens  The tokens
      */
-    // public static void testAddTask(final Todoist todo, final String[] tokens) {
-    //     try {
-    //         todo.addTask(createTask(tokens));
-    //     } catch (Exception e) {
-    //         System.out.println(e.getMessage());
-    //     }
-    // }
-
+    public static void testAddTask(final Todoist todo, final String[] tokens) {
+        try {
+            todo.addTask(createTask(tokens));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
     /**
      * method to test the creation of task object.
      *
