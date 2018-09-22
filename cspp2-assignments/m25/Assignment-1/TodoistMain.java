@@ -42,13 +42,12 @@ class Task {
     	        return s;
             } else {
             	throw new Exception ("Invalid status"+" "+status);
-            }
-            } catch (Exception e) {
+            } 
+        }catch (Exception e) {
         	return (e.getMessage());
         } 
     }
 }
-
 
 /**
  * Class for todoist main.
