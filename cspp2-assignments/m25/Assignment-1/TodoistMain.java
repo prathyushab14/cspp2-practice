@@ -149,8 +149,8 @@ class Todoist {
 						}
 					}
 				}
-			}i++; return t;
-		}return null;
+			}i++; 
+		}return t;
 	}
 }
 
