@@ -143,8 +143,8 @@ class Todoist {
 				t[j] = tasks[i];
 				i = i+1;
 				
-			}
-		}return t;
+			}return t;
+		}
 	}return null;
 }
 }
