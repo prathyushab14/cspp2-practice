@@ -139,12 +139,11 @@ class Todoist {
 		Task[] t = new Task[n];
 		Task m = new Task();
 		for (int i = 0; i < size;) {
-			for (int j = 0; j < t.length;){
+			for (int j = 0; j < t.length;) {
 		 	if (tasks[i].getName().equals(name) && tasks[i].getStatus().equals("todo") && tasks[i].getImp().equals("Important") && tasks[i].getUrg().equals("Not Urgent")) {
 					t[j] = tasks[i];
 					j++;
-					i++;
-			}
+			}i++;
 		}return t;
 	}return null;
 }
