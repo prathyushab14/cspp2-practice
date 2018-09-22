@@ -24,7 +24,19 @@ class Task {
     }
     public String toString() {
     	String s = "";
-    	s += title+", "+name+", "+time+", "+"Important"+", "+"Urgent"+", "+status;
+    	String i = "";
+    	String u = "";
+    	if (imp) {
+    		i = "Important";
+        } else {
+        	i = "Not Important";
+        }
+        if (urg) {
+        	u = "Urgent";
+        } else {
+        	u = "Not Urgent";
+        }
+    	s += title+", "+name+", "+time+", "+i+", "+u+", "+status;
     	return s;
     }
 }
