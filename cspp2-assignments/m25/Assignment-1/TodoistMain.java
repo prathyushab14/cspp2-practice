@@ -147,7 +147,7 @@ public class TodoistMain {
                 break;
                 case "print-todoist":
                     System.out.println(todo);
-                // break;
+                break;
                 // case "get-next":
                 //     System.out.println(todo.getNextTask(tokens[1]));
                 // break;
