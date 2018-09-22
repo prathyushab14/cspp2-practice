@@ -35,6 +35,13 @@ class Task {
     			return (e.getMessage());
     		}
     	try {
+    		if (title.equals("")) {
+    			throw new Exception("Title not provided");
+    		}
+    	}catch (Exception e) {
+    		return (e.getMessage());
+    	}
+    	try {
         	if (status.equals("todo") || status.equals("done")) {
         		if (imp) {
     		        i = "Important";
