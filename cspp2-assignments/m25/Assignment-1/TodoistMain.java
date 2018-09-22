@@ -22,6 +22,32 @@ class Task {
 		urg = urg1;
 		status = status1;
     }
+    public String getTitle() {
+    	return title;
+    }
+    public String getName() {
+    	return name;
+    }
+    public int getTime() {
+    	return time;
+    }
+    public String getImp() {
+    	if (imp) {
+    		return "Important";
+    	} else {
+    		return "Not Important";
+    	}
+    }
+    public String getUrg() {
+    	if (urg) {
+    		return "Urgent";
+    	} else {
+    		return "Not Urgent";
+    	}
+    }
+    public String getStatus() {
+    	return status;
+    }
     public String toString() {
     	String s = "";
     	String i = "";
@@ -72,6 +98,14 @@ class Todoist {
 	}
 	public void addTask(Task t) {
 		tasks[size++] = t;
+	}
+	public String toString() {
+		Task tk = new Task();
+		String str ="";
+		for (int i = 0; i < size; i++) {
+			str += tk.getTitle()+", "+tk.getName()+", "+tk.getTime()+", "+tk.getImp()+", "+tk.getUrg()+", "+tk.getStatus();
+		}
+		return str;
 	}
 }
 
