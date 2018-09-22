@@ -28,7 +28,7 @@ class Task {
     	String u = "";
     	try {
     		if (time < 0) {
-    			throw new Exception("Invalid timetoComplete"+" "+time);
+    			throw new Exception("Invalid timeToComplete"+" "+time);
     		}
     	}
     		 catch(Exception e) {
