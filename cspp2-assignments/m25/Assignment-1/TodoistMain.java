@@ -103,7 +103,7 @@ class Todoist {
 		Task tk = new Task();
 		String str ="";
 		for (int i = 0; i < size; i++) {
-			str += tk.getTitle()+", "+tk.getName()+", "+tk.getTime()+", "+tk.getImp()+", "+tk.getUrg()+", "+tk.getStatus();
+			str += tasks[i].getTitle()+", "+tasks[i].getName()+", "+tasks[i].getTime()+", "+tasks[i].getImp()+", "+tasks[i].getUrg()+", "+tasks[i].getStatus();
 		}
 		return str;
 	}
