@@ -97,7 +97,13 @@ class Todoist {
 		size = 0;
 	}
 	public void addTask(Task t) {
+		if (size == tasks.length) {
+			resize();
+		}
 		tasks[size++] = t;
+	}
+	public void resize() {
+		tasks = Arrays.copyOf(tasks, 2*size);
 	}
 	public String toString() {
 		Task tk = new Task();
