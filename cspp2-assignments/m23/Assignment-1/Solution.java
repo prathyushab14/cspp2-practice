@@ -1,85 +1,154 @@
-import java.io.*;
-import java.util.*;
-class BagofWords {
-	BagofWords() {
+import java.util.Scanner;
+import java.io.FileReader;
+import java.util.Map;
+import java.util.HashMap;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.NoSuchElementException;
+/**
+*class data.
+*/
+class Doc {
+    /** empty constructor.
+    */
+    Doc() {
     }
-	Map<String, Integer> map = new HashMap<String,Integer>();
-	Map<String, Integer> map1 = new HashMap<String, Integer>();
-	public void addWords(String[] list) {
-		for (String s : list) {
-			if (map.containsKey(s)){
-				int count = map.get(s);
-                map.put(s, count+1);
-            } else {
-                map.put(s, 1);
+    /**
+    * file document text to string.
+    *@param f File
+    *@return str returns string.
+    */
+    public static String toText(final File f) {
+        String s = "";
+        try {
+            Scanner sc = new Scanner(new FileReader(f));
+            StringBuilder t = new StringBuilder();
+            while (sc.hasNext()) {
+                t.append(sc.next());
+                t.append(" ");
             }
-		}
-		// for(String i: map.keySet()) {
-		// 	System.out.println(i +" "+map.get(i));
-		// }
-		// ArrayList<Integer> val = new ArrayList();
-		// for (String i : map.keySet()) {
-		// 		val.add(map.get(i)); 
-		// 	}
-		// System.out.println(val);
-		// getEuclediannorm(val);
+            sc.close();
+            s = t.toString();
+        } catch (FileNotFoundException e) {
+            System.out.println("No file");
+        }
+        return s;
     }
-    public void addWord(String[] l) {
-        for (String s : l) {
-			if (map1.containsKey(s)){
-				int count = map1.get(s);
-                map1.put(s, count+1);
+    /**
+     * to remove the unwanted characters.
+     *
+     * @param      t  The text
+     *
+     * @return map which contains
+     * freq of words.
+     */
+    public Map remove(final String t) {
+        t.toLowerCase();
+        t.replaceAll("[0-9_]", "");
+        String[] words = t.split(" ");
+        Map<String, Integer> map = new HashMap<>();
+        for (String ele : words) {
+         if (ele.length() > 0) {
+            if (!(map.containsKey(ele))) {
+                map.put(ele, 1);
             } else {
-                map1.put(s, 1);
+                map.put(ele, map.get(ele) + 1);
             }
-		}
+        }
     }
+        return map;
+    }
+    /**
+     *document distance.
+     *@param text1 first file string
+     *@param text2 second file string
+     *@return document distance
+     */
 
-    public void dist() {
-    	double n = 0;
-    	double d1 = 0;
-    	double d2 = 0;
-    	double res = 0;
-    	for (String i : map.keySet()) { 
-    		if (map1.containsKey(i)) {
-    			n += map.get(i) * map1.get(i);
-    		}
-    	}
-    	for (String i : map.keySet()) {
-    	    d1 += Math.pow(map.get(i), 2);
-    	}
-    	for (String i : map1.keySet()) {
-    		d2 = Math.pow(map1.get(i), 2);
-    	}
-    	double d = (Math.sqrt(d1) * Math.sqrt(d2));
-    	res = (n / d) * 100;
-    	System.out.println(res);
+    public int similarity(final String text1, final String text2) {
+        double n = 0;
+        double d = 1;
+        double sum1 = 0;
+        double sum2 = 0;
+        final int hun = 100;
+        Map<String, Integer> map1 = remove(text1);
+        Map<String, Integer> map2 = remove(text2);
+        for (String ele: map1.keySet()) {
+            for (String item: map2.keySet()) {
+                if (ele.equals(item)) {
+                    n += map1.get(ele) * map2.get(item);
+                }
+            }
+        }
+
+        for (String word: map1.keySet()) {
+            sum1 += map1.get(word) * map1.get(word);
+        }
+        for (String word: map2.keySet()) {
+            sum2 += map2.get(word) * map2.get(word);
+        }
+        d = Math.sqrt(sum1) * Math.sqrt(sum2);
+        double documentDistance = (
+            (n / d) * hun);
+        return (int) (documentDistance);
     }
 }
-class Solution {
-	public static void main(String[] args) throws Exception {
-		BagofWords bg = new BagofWords();
-		try {
-			File file = new File("Test");
-		    File[] f = file.listFiles();
-		    for (int i = 0; i < f.length; i++) {
-			    for (int j = 0; j < f.length; j++) {
-				    Scanner s = new Scanner(f[i]);
-				    String l = s.nextLine().replaceAll("[^A-Za-z0-9]","");
-				    String[] fl = l.toLowerCase().split(" ");
-				    bg.addWords(fl);
+/**solution class.
+*/
+public final class Solution {
+    /**constructor.
+    */
+    private Solution() {
 
-				    Scanner sc = new Scanner(f[j]);
-				    String li = sc.nextLine().replaceAll("[^A-Za-z0-9]","");
-				    String[] sl = li.toLowerCase().split(" ");
-				    bg.addWord(sl);
-		        }
-		        bg.dist();
-			}
-		}
-		catch (Exception e) {
-			System.out.println(e);
-		}
-
-	}
+    }
+    /**
+     * main method.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        try  {
+        Scanner sc = new Scanner(System.in);
+        String inp = sc.nextLine();
+        File fls = new File(inp);
+        Doc obj1 = new Doc();
+        File[] file = fls.listFiles();
+        int len = file.length;
+        int max = 0;
+        final int hundred = 100;
+        String res = "";
+        int[][] fileM = new int[len][len];
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                if (i == j) {
+                    fileM[i][j] = hundred;
+                } else {
+                    fileM[i][j] = obj1.similarity(
+                        obj1.toText(file[i]), obj1.toText(file[j]));
+                    if (max < fileM[i][j]) {
+                        max = fileM[i][j];
+                        res = "Maximum similarity is between "
+                        + file[i].getName() + " and "
+                        + file[j].getName();
+                    }
+                }
+            }
+        }
+        System.out.print("      \t");
+        for (int i = 0; i < len - 1; i++) {
+            System.out.print("\t" + file[i].getName());
+        }
+        System.out.println("\t" + file[len - 1].getName());
+        for (int i = 0; i < len; i++) {
+            System.out.print(file[i].getName() + "\t");
+            for (int j = 0; j < len; j++) {
+                    System.out.print(fileM[i][j] + "\t\t");
+            }
+            System.out.println();
+        }
+     System.out.println(res);
+    } catch (NoSuchElementException e) {
+        System.out.println("empty directory");
+    }
+    }
 }
