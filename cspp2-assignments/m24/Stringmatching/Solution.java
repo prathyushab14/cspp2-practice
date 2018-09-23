@@ -35,8 +35,8 @@ class Doc {
     }
     /**
      *document distance.
-     *@param text1 first file 
-     *@param text2 second file 
+     *@param text1 first file
+     *@param text2 second file
      *@return document distance
      */
 
