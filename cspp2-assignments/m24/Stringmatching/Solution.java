@@ -13,7 +13,7 @@ class Doc {
     Doc() {
     }
     /**
-    *text to string
+    *text to string.
     *@param f File
     *@return str returns string of that text.
     */
