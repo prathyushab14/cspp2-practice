@@ -137,12 +137,12 @@ class Todoist {
 	}
 	public Task[] getNextTask(String name, int n) {
 		Task[] t = new Task[n];
-		int size =0;
+		int siz =0;
 		// for (int j = 0; j < t.length;j++) {
 			for (int i = 0; i < size;i++) {
-				if(size<n)
+				if(siz<n)
 	   if (tasks[i].getName().equals(name) && tasks[i].getStatus().equals("todo") && tasks[i].getImp().equals("Important") && tasks[i].getUrg().equals("Not Urgent")) {
-				t[size++] = tasks[i];
+				t[siz++] = tasks[i];
 				// i = i+1;
 				
 			}
