@@ -10,7 +10,7 @@ class Doc {
         t1 = "";
         t2 = "";
     }
-    public static String DocToString(File f) {
+    public static String DocToString(final File f) {
         String fileToString = "";
         try {
             Scanner s = new Scanner(new FileReader(f));
@@ -21,37 +21,40 @@ class Doc {
             }
             s.close();
             fileToString = sb.toString();
-        } catch(FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             System.out.println("no file");
         }
         return fileToString;
     }
-    public static Map removewords(String txt) {
+    public static Map removewords(final String txt) {
         String w = "";
         Pattern p = Pattern.compile("[^0-9_.,]");
         Matcher match = p.matcher(txt);
-        while(match.find()) {
+        while (match.find()) {
             w += match.group();
         }
         w = w.toLowerCase();
         String[] words = w.split(" ");
         Map <String, Integer> map = new HashMap<>();
         for (int i = 0; i  < words.length; i++) {
-            if(!map.containsKey(words[i])) {
+            if (!map.containsKey(words[i])) {
                 map.put(words[i], 1);
             } else {
-                map.put(words[i],map.get(words[i]) + 1);
+                map.put(words[i], map.get(words[i]) + 1);
             }
         }
         return map;
     }
-    public static int compare(String string1, String string2) {
+    public static int compare(final String string1, final String string2) {
         float n = 0;
         double d = 0;
         float fSum = 0;
         float sSum = 0;
-        Map <String,Integer> firstMap = removewords(string1);
-       Map <String,Integer> secondMap = removewords(string2);
+        final double hun = 100D;
+        final int h = 100;
+        final int two = 2;
+        Map <String, Integer> firstMap = removewords(string1);
+       Map <String, Integer> secondMap = removewords(string2);
        for (String inmapOne : firstMap.keySet()) {
            for (String inmapTwo : secondMap.keySet()) {
                if (inmapOne.equals(inmapTwo)) {
@@ -60,22 +63,32 @@ class Doc {
            }
        }
        for (String inmapOne : firstMap.keySet()) {
-           fSum += Math.pow(firstMap.get(inmapOne),2) ;
+           fSum += Math.pow(firstMap.get(inmapOne), two) ;
        }
        for (String inmapTwo : secondMap.keySet()) {
-           sSum += Math.pow(secondMap.get(inmapTwo),2);
+           sSum += Math.pow(secondMap.get(inmapTwo), two);
        }
        d = Math.sqrt(fSum) * Math.sqrt(sSum);
-       double output = (n / d) * 100;
-       return  (int) ((output * 100D) / 100D) ;
+       double output = (n / d) * h;
+       return  (int) ((output * hun) / hun) ;
     }
-    
 }
+/**
+ * Class for solution.
+ */
 class Solution {
-    Solution() {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
 
     }
-    public static void main(String[] args) {
+    /**
+     * main function.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         try {
         Doc d = new Doc();
         String path;
@@ -87,7 +100,8 @@ class Solution {
         int[][] matrix = new int[length][length];
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
-                matrix[i][j] = Doc.compare(Doc.DocToString(list[i]),Doc.DocToString(list[j]));
+                matrix[i][j] = Doc.compare(Doc.DocToString(list[i]),
+                    Doc.DocToString(list[j]));
             }
         }
         System.out.print("      \t");
@@ -105,6 +119,5 @@ class Solution {
     } catch (NoSuchElementException e) {
         System.out.println("empty directory");
     }
-    
     }
 }
