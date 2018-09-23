@@ -6,53 +6,53 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.NoSuchElementException;
 /**
-*class data.
+*class doc.
 */
 class Doc {
-    /** empty constructor.
+    /** constructor.
     */
     Doc() {
     }
     /**
-    * file document text to string.
-    *@param f File
-    *@return str returns string.
+    *text to string.
+    *@param fl File
+    *@return string.
     */
-    public static String toText(final File f) {
-        String s = "";
+    public static String toText(final File fl) {
+        String str = "";
         try {
-            Scanner sc = new Scanner(new FileReader(f));
-            StringBuilder t = new StringBuilder();
+            Scanner sc = new Scanner(new FileReader(fl));
+            StringBuilder tx = new StringBuilder();
             while (sc.hasNext()) {
-                t.append(sc.next());
-                t.append(" ");
+                tx.append(sc.next());
+                tx.append(" ");
             }
             sc.close();
-            s = t.toString();
+            str = tx.toString();
         } catch (FileNotFoundException e) {
             System.out.println("No file");
         }
-        return s;
+        return str;
     }
     /**
-     * to remove the unwanted characters.
+     * remove characters.
      *
-     * @param      t  The text
+     * @param      tx  The text
      *
-     * @return map which contains
+     * @return map
      * freq of words.
      */
-    public Map remove(final String t) {
-        t.toLowerCase();
-        t.replaceAll("[0-9_]", "");
-        String[] words = t.split(" ");
+    public Map remove(final String tx) {
+        tx.toLowerCase();
+        tx.replaceAll("[0-9_]", "");
+        String[] words = tx.split(" ");
         Map<String, Integer> map = new HashMap<>();
-        for (String ele : words) {
-         if (ele.length() > 0) {
-            if (!(map.containsKey(ele))) {
-                map.put(ele, 1);
+        for (String e : words) {
+         if (e.length() > 0) {
+            if (!(map.containsKey(e))) {
+                map.put(e, 1);
             } else {
-                map.put(ele, map.get(ele) + 1);
+                map.put(e, map.get(e) + 1);
             }
         }
     }
@@ -60,8 +60,8 @@ class Doc {
     }
     /**
      *document distance.
-     *@param text1 first file string
-     *@param text2 second file string
+     *@param text1 first file
+     *@param text2 second file
      *@return document distance
      */
 
