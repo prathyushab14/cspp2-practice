@@ -71,21 +71,21 @@ class Doc {
         double sum1 = 0;
         double sum2 = 0;
         final int hun = 100;
-        Map<String, Integer> mapOne = remove(text1);
-        Map<String, Integer> mapTwo = remove(text2);
-        for (String ele: mapOne.keySet()) {
-            for (String item: mapTwo.keySet()) {
+        Map<String, Integer> map1 = remove(text1);
+        Map<String, Integer> map2 = remove(text2);
+        for (String ele: map1.keySet()) {
+            for (String item: map2.keySet()) {
                 if (ele.equals(item)) {
-                    n += mapOne.get(ele) * mapTwo.get(item);
+                    n += map1.get(ele) * map2.get(item);
                 }
             }
         }
 
-        for (String word: mapOne.keySet()) {
-            sum1 += mapOne.get(word) * mapOne.get(word);
+        for (String word: map1.keySet()) {
+            sum1 += map1.get(word) * map1.get(word);
         }
-        for (String word: mapTwo.keySet()) {
-            sum2 += mapTwo.get(word) * mapTwo.get(word);
+        for (String word: map2.keySet()) {
+            sum2 += map2.get(word) * map2.get(word);
         }
         d = Math.sqrt(sum1) * Math.sqrt(sum2);
         double documentDistance = (
@@ -110,43 +110,43 @@ public final class Solution {
         try  {
         Scanner sc = new Scanner(System.in);
         String inp = sc.nextLine();
-        File files = new File(inp);
+        File fls = new File(inp);
         Data obj1 = new Data();
-        File[] fileList = files.listFiles();
-        int length = fileList.length;
-        int maxValue = 0;
+        File[] file = fls.listFiles();
+        int len = file.length;
+        int max = 0;
         final int hundred = 100;
-        String result = "";
-        int[][] fileM = new int[length][length];
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length; j++) {
+        String res = "";
+        int[][] fileM = new int[len][len];
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
                 if (i == j) {
                     fileM[i][j] = hundred;
                 } else {
                     fileM[i][j] = obj1.similarity(
-                        obj1.toText(fileList[i]), obj1.toText(fileList[j]));
-                    if (maxValue < fileM[i][j]) {
-                        maxValue = fileM[i][j];
-                        result = "Maximum similarity is between "
-                        + fileList[i].getName() + " and "
-                        + fileList[j].getName();
+                        obj1.toText(file[i]), obj1.toText(file[j]));
+                    if (max < fileM[i][j]) {
+                        max = fileM[i][j];
+                        res = "Maximum similarity is between "
+                        + file[i].getName() + " and "
+                        + file[j].getName();
                     }
                 }
             }
         }
         System.out.print("      \t");
-        for (int i = 0; i < length - 1; i++) {
-            System.out.print("\t" + fileList[i].getName());
+        for (int i = 0; i < len - 1; i++) {
+            System.out.print("\t" + file[i].getName());
         }
-        System.out.println("\t" + fileList[length - 1].getName());
-        for (int i = 0; i < length; i++) {
-            System.out.print(fileList[i].getName() + "\t");
-            for (int j = 0; j < length; j++) {
+        System.out.println("\t" + file[len - 1].getName());
+        for (int i = 0; i < len; i++) {
+            System.out.print(file[i].getName() + "\t");
+            for (int j = 0; j < len; j++) {
                     System.out.print(fileM[i][j] + "\t\t");
             }
             System.out.println();
         }
-     System.out.println(result);
+     System.out.println(res);
     } catch (NoSuchElementException e) {
         System.out.println("empty directory");
     }
