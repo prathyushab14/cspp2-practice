@@ -5,128 +5,128 @@ import java.util.HashMap;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.NoSuchElementException;
-/**this class is to maintain.
-*complete details of two files.
+/**
+*class data.
 */
-class Data {
-    /** this is an empty constructor.
+class Doc {
+    /** empty constructor.
     */
-    Data() {
+    Doc() {
     }
-    /**this method is to convert the.
-    *file document text to string
-    *@param file File
-    *@return str returns string of that text.
+    /**
+    * file document text to string.
+    *@param f File
+    *@return str returns string.
     */
-    public static String toText(final File file) {
-        String str = "";
+    public static String toText(final File f) {
+        String s = "";
         try {
-            Scanner input = new Scanner(new FileReader(file));
-            StringBuilder text = new StringBuilder();
-            while (input.hasNext()) {
-                text.append(input.next());
-                text.append(" ");
+            Scanner sc = new Scanner(new FileReader(f));
+            StringBuilder t = new StringBuilder();
+            while (sc.hasNext()) {
+                t.append(sc.next());
+                t.append(" ");
             }
-            input.close();
-            str = text.toString();
+            sc.close();
+            s = t.toString();
         } catch (FileNotFoundException e) {
             System.out.println("No file");
         }
-        return str;
+        return s;
     }
     /**
      * to remove the unwanted characters.
      *
-     * @param      text  The text
+     * @param      t  The text
      *
      * @return map which contains
-     * frequency of words.
+     * freq of words.
      */
-    public Map remove(final String text) {
-        text.toLowerCase();
-        text.replaceAll("[0-9_]", "");
-        String[] words = text.split(" ");
+    public Map remove(final String t) {
+        t.toLowerCase();
+        t.replaceAll("[0-9_]", "");
+        String[] words = t.split(" ");
         Map<String, Integer> map = new HashMap<>();
-        for (String element : words) {
-         if (element.length() > 0) {
-            if (!(map.containsKey(element))) {
-                map.put(element, 1);
+        for (String ele : words) {
+         if (ele.length() > 0) {
+            if (!(map.containsKey(ele))) {
+                map.put(ele, 1);
             } else {
-                map.put(element, map.get(element) + 1);
+                map.put(ele, map.get(ele) + 1);
             }
         }
     }
         return map;
     }
-    /**this method is to give the.
+    /**
      *document distance.
-     *@param textOne first file string
-     *@param textTwo second file string
+     *@param text1 first file string
+     *@param text2 second file string
      *@return document distance
      */
 
-    public int similarity(final String textOne, final String textTwo) {
-        double numerator = 0;
-        double denominator = 1;
-        double sumOne = 0;
-        double sumTwo = 0;
-        final int hundred = 100;
-        Map<String, Integer> mapOne = remove(textOne);
-        Map<String, Integer> mapTwo = remove(textTwo);
-        for (String element: mapOne.keySet()) {
+    public int similarity(final String text1, final String text2) {
+        double n = 0;
+        double d = 1;
+        double sum1 = 0;
+        double sum2 = 0;
+        final int hun = 100;
+        Map<String, Integer> mapOne = remove(text1);
+        Map<String, Integer> mapTwo = remove(text2);
+        for (String ele: mapOne.keySet()) {
             for (String item: mapTwo.keySet()) {
-                if (element.equals(item)) {
-                    numerator += mapOne.get(element) * mapTwo.get(item);
+                if (ele.equals(item)) {
+                    n += mapOne.get(ele) * mapTwo.get(item);
                 }
             }
         }
 
         for (String word: mapOne.keySet()) {
-            sumOne += mapOne.get(word) * mapOne.get(word);
+            sum1 += mapOne.get(word) * mapOne.get(word);
         }
         for (String word: mapTwo.keySet()) {
-            sumTwo += mapTwo.get(word) * mapTwo.get(word);
+            sum2 += mapTwo.get(word) * mapTwo.get(word);
         }
-        denominator = Math.sqrt(sumOne) * Math.sqrt(sumTwo);
+        d = Math.sqrt(sum1) * Math.sqrt(sum2);
         double documentDistance = (
-            (numerator / denominator) * hundred);
+            (n / d) * hun);
         return (int) (documentDistance);
     }
 }
-/** this is the solution class.
+/**solution class.
 */
 public final class Solution {
-    /** an empty constructor.
+    /**constructor.
     */
     private Solution() {
 
     }
     /**
-     * this is main method.
+     * main method.
      *
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
         try  {
-        Scanner scan = new Scanner(System.in);
-        String input = scan.nextLine();
-        File files = new File(input);
-        Data obj = new Data();
+        Scanner sc = new Scanner(System.in);
+        String inp = sc.nextLine();
+        File files = new File(inp);
+        Data obj1 = new Data();
         File[] fileList = files.listFiles();
         int length = fileList.length;
         int maxValue = 0;
         final int hundred = 100;
         String result = "";
-        int[][] fileMatrix = new int[length][length];
+        int[][] fileM = new int[length][length];
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
                 if (i == j) {
-                    fileMatrix[i][j] = hundred;
+                    fileM[i][j] = hundred;
                 } else {
-                    fileMatrix[i][j] = obj.similarity(
-                        obj.toText(fileList[i]), obj.toText(fileList[j]));
-                    if (maxValue < fileMatrix[i][j]) {
-                        maxValue = fileMatrix[i][j];
+                    fileM[i][j] = obj1.similarity(
+                        obj1.toText(fileList[i]), obj1.toText(fileList[j]));
+                    if (maxValue < fileM[i][j]) {
+                        maxValue = fileM[i][j];
                         result = "Maximum similarity is between "
                         + fileList[i].getName() + " and "
                         + fileList[j].getName();
@@ -142,7 +142,7 @@ public final class Solution {
         for (int i = 0; i < length; i++) {
             System.out.print(fileList[i].getName() + "\t");
             for (int j = 0; j < length; j++) {
-                    System.out.print(fileMatrix[i][j] + "\t\t");
+                    System.out.print(fileM[i][j] + "\t\t");
             }
             System.out.println();
         }
