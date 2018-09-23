@@ -84,7 +84,7 @@ public final class Solution {
         Scanner sc = new Scanner(System.in);
         String inp = sc.nextLine();
         File fls = new File(inp);
-        Data obj1 = new Data();
+        Doc obj1 = new Doc();
         File[] list = fls.listFiles();
         int len = list.length;
         double max = 0;
